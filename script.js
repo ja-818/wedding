@@ -8,12 +8,9 @@ const CONFIG = {
   fechaCorta: "28 de Junio",
 
   // --- Lugar (compartido) ---
-  donde: "Caña — La Casa Negra · Calle 54a #4-26, Bogotá",
+  donde: "Caña — Aguardientería y Bodega · Calle 54a #4-26, Bogotá",
   lugarTexto: "Un bar con alma en el corazón de Bogotá. Calle 54a #4-26.",
-  instagram: "https://www.instagram.com/lacasanegra.bog/",
-  mapaUrl:
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent("Calle 54a #4-26, Bogotá, Colombia 110231"),
+  mapaUrl: "https://maps.app.goo.gl/xLgopQqYxdpxYco28",
 
   // --- Dress code (compartido) ---
   dressCode: {

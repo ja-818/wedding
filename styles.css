@@ -98,8 +98,9 @@ main, .hero { position: relative; z-index: 1; }
   letter-spacing: 0.12em;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--gray-500);
+  color: #fff;
   margin: 0 0 14px;
+  text-shadow: 0 1px 14px rgba(10,10,10,0.6);
 }
 .title {
   font-size: clamp(2rem, 6vw, 2.8rem);
