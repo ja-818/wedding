@@ -56,12 +56,12 @@ const CONFIG = {
       intro:
         "Nos casamos y la noche apenas empieza. Llégate a brindar, a bailar y a " +
         "celebrar con nosotros hasta tarde. Sin protocolos, puro buen rato.",
-      eventTag: "La fiesta",
-      eventTitle: "¡A celebrar!",
-      cuando: "Domingo 28 de junio, 2026 · desde las 10:00 p.m. hasta las 2:00 a.m.",
-      rsvpTexto:
-        "Para tenerlo todo listo, te pedimos confirmar antes del " +
-        "<strong>1 de junio</strong>. ¡Avísanos que vienes!",
+      // --- Flyer de fiesta ---
+      flyerInvite: "Estás invitad@ a celebrar",
+      flyerTag: "La fiesta de la boda",
+      flyerCuando: "Domingo 28 de junio · 10:00 p.m. – 2:00 a.m.",
+      flyerDonde: "Caña · Calle 54a #4-26, Bogotá",
+      flyerDress: "Cóctel",
       waMensaje: "¡Hola! Confirmo mi asistencia a la fiesta de Julián y Valentina. 🥂",
     },
   },
@@ -82,12 +82,6 @@ document.title = `${CONFIG.nombre1} & ${CONFIG.nombre2} · ${esFiesta ? "La fies
 // Mezcla de valores: primero la vista, luego lo compartido
 const DATA = Object.assign({}, CONFIG, vista);
 
-// En la fiesta (one-pager, sin sección de lugar) añadimos el mapa junto a la dirección
-if (esFiesta) {
-  DATA.donde =
-    `${CONFIG.donde} — <a class="maplink" href="${CONFIG.mapaUrl}" target="_blank" rel="noopener">Ver mapa</a>`;
-}
-
 // --- 2. Rellenar textos ---
 document.querySelectorAll("[data-config]").forEach((el) => {
   const key = el.getAttribute("data-config");
@@ -98,9 +92,11 @@ document.querySelectorAll("[data-config-href]").forEach((el) => {
   if (DATA[key] != null) el.setAttribute("href", DATA[key]);
 });
 
-// --- 3. Ocultar secciones exclusivas de la boda en la vista de fiesta ---
+// --- 3. Mostrar solo la vista activa (boda completa o flyer de fiesta) ---
 if (esFiesta) {
-  document.querySelectorAll(".only-ceremonia, .hide-fiesta").forEach((el) => el.remove());
+  document.querySelectorAll(".only-boda").forEach((el) => el.remove());
+} else {
+  document.querySelectorAll(".only-fiesta").forEach((el) => el.remove());
 }
 
 // --- 4. Enlace a la invitación de la FIESTA (para reenviar al +1) ---

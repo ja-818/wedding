@@ -14,12 +14,13 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Tema oscuro para la vista de fiesta (antes de pintar, sin parpadeo) -->
+  <!-- Tema oscuro + layout correcto antes de pintar (sin parpadeo) -->
   <script>
     (function () {
+      document.documentElement.classList.add("dark");
       var p = new URLSearchParams(location.search);
       if ((p.get("invitacion") || "").toLowerCase() === "fiesta") {
-        document.documentElement.classList.add("dark");
+        document.documentElement.classList.add("is-fiesta");
       }
     })();
   </script>
@@ -27,8 +28,10 @@
 <body>
   <div class="wash" aria-hidden="true"></div>
 
-  <!-- ============ PORTADA ============ -->
-  <header class="hero" id="inicio">
+  <!-- =====================================================
+       VISTA BODA (página oscura completa)
+       ===================================================== -->
+  <header class="hero only-boda" id="inicio">
     <p class="eyebrow" data-config="heroEyebrow"></p>
     <p class="kicker" data-config="heroKicker">Nos casamos</p>
 
@@ -45,8 +48,8 @@
     <p class="hero__scroll" aria-hidden="true">Desliza</p>
   </header>
 
-  <main>
-    <!-- ============ CLIP (modo gif B/N) ============ -->
+  <main class="only-boda">
+    <!-- CLIP (modo gif B/N) -->
     <section class="section section--reel reveal" aria-hidden="true">
       <figure class="reel">
         <video class="reel__video" autoplay muted loop playsinline preload="auto">
@@ -55,8 +58,8 @@
       </figure>
     </section>
 
-    <!-- ============ INTRO (solo boda) ============ -->
-    <section class="section section--intro hide-fiesta reveal">
+    <!-- INTRO -->
+    <section class="section section--intro reveal">
       <p class="label" data-config="introScript">Te esperamos</p>
       <p class="lede" data-config="intro">
         Después de mucho camino juntos, queremos celebrar nuestro amor rodeados de
@@ -64,7 +67,7 @@
       </p>
     </section>
 
-    <!-- ============ EL PLAN ============ -->
+    <!-- EL PLAN -->
     <section class="section section--event reveal" id="plan">
       <span class="label" data-config="eventTag">La boda</span>
       <h2 class="title" data-config="eventTitle">El gran día</h2>
@@ -74,8 +77,8 @@
       </div>
     </section>
 
-    <!-- ============ ACOMPAÑANTE / +1 (solo boda) ============ -->
-    <section class="section section--plusone only-ceremonia reveal">
+    <!-- ACOMPAÑANTE / +1 -->
+    <section class="section section--plusone reveal">
       <div class="card">
         <h3 class="card__title">¿Vienes con alguien?</h3>
         <p class="card__text" data-config="plusOne">
@@ -91,7 +94,7 @@
       </div>
     </section>
 
-    <!-- ============ DRESS CODE ============ -->
+    <!-- DRESS CODE -->
     <section class="section section--dress reveal" id="dresscode">
       <span class="label">Código de vestimenta</span>
       <h2 class="title">Cóctel</h2>
@@ -101,8 +104,8 @@
       </p>
     </section>
 
-    <!-- ============ UBICACIÓN (solo boda) ============ -->
-    <section class="section section--place hide-fiesta reveal" id="ubicacion">
+    <!-- UBICACIÓN -->
+    <section class="section section--place reveal" id="ubicacion">
       <span class="label">El lugar</span>
       <h2 class="title">Caña</h2>
       <p class="lede" data-config="lugarTexto">
@@ -111,7 +114,7 @@
       <a class="btn btn--ghost" data-config-href="mapaUrl" href="#" target="_blank" rel="noopener">Ver en el mapa</a>
     </section>
 
-    <!-- ============ CIERRE ============ -->
+    <!-- CIERRE -->
     <footer class="closing reveal">
       <p class="closing__label">Con amor,</p>
       <p class="closing__names">
@@ -119,6 +122,38 @@
       </p>
     </footer>
   </main>
+
+  <!-- =====================================================
+       VISTA FIESTA (flyer de una sola pantalla)
+       ===================================================== -->
+  <section class="flyer only-fiesta" aria-label="Invitación a la fiesta">
+    <video class="flyer__bg" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="assets/cana.mp4" type="video/mp4" />
+    </video>
+    <div class="flyer__scrim" aria-hidden="true"></div>
+
+    <div class="flyer__card">
+      <!-- Logo de Caña (reemplazable por el logo real) -->
+      <div class="flyer__logo">
+        <span class="flyer__brand">Caña</span>
+        <span class="flyer__brand-sub">La Casa Negra</span>
+      </div>
+
+      <p class="flyer__eyebrow" data-config="flyerInvite">Estás invitad@ a celebrar</p>
+      <h1 class="flyer__names">
+        <span data-config="nombre1">Julián</span> <em>&amp;</em> <span data-config="nombre2">Valentina</span>
+      </h1>
+      <p class="flyer__tag" data-config="flyerTag">La fiesta de la boda</p>
+
+      <dl class="flyer__meta">
+        <div><dt>Cuándo</dt><dd data-config="flyerCuando">Domingo 28 de junio · 10:00 p.m.</dd></div>
+        <div><dt>Dónde</dt><dd data-config="flyerDonde">Caña · Calle 54a #4-26, Bogotá</dd></div>
+        <div><dt>Código</dt><dd data-config="flyerDress">Cóctel</dd></div>
+      </dl>
+
+      <a class="flyer__btn" data-config-href="mapaUrl" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
