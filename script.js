@@ -115,6 +115,19 @@ if (esFiesta) {
   document.querySelectorAll(".only-fiesta").forEach((el) => el.remove());
 }
 
+// --- 3a. Personalización del invitado (solo fiesta): ?para=Nombre ---
+if (esFiesta) {
+  const raw = (params.get("para") || params.get("nombre") || params.get("name") || "").trim();
+  if (raw) {
+    const name = raw.charAt(0).toUpperCase() + raw.slice(1);
+    document.querySelectorAll("[data-greet]").forEach((el) => {
+      el.textContent = `${name},`;
+      el.hidden = false;
+    });
+    document.title = `${name} · La fiesta de ${CONFIG.nombre1} & ${CONFIG.nombre2}`;
+  }
+}
+
 // --- 3b. Dress code (se construye en HTML, tema oscuro) ---
 function dressCodeHTML(dc) {
   const swatches = dc.swatches.map((c) => `<span style="--c:${c}"></span>`).join("");

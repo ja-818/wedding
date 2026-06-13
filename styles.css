@@ -370,11 +370,18 @@ main, .hero { position: relative; z-index: 1; }
   color: rgba(245,245,245,0.6); margin-top: 10px; padding-left: 0.36em;
 }
 
+.flyer__greet[hidden] { display: none; }
+.flyer__greet {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.6rem, 7vw, 2.1rem); line-height: 1.1;
+  color: #fff; margin: 32px 0 0;
+}
 .flyer__eyebrow {
   font-family: var(--sans); text-transform: uppercase;
   letter-spacing: 0.2em; font-size: 0.7rem; font-weight: 600;
   color: rgba(245,245,245,0.7); margin: 38px 0 14px;
 }
+.flyer__greet:not([hidden]) + .flyer__eyebrow { margin-top: 12px; }
 .flyer__names {
   font-family: var(--serif); font-weight: 500;
   font-size: clamp(2.2rem, 9vw, 3.1rem); letter-spacing: -0.02em;
