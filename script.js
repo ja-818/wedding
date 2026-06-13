@@ -21,22 +21,29 @@ const CONFIG = {
 
   // --- Ceremonia ---
   ceremoniaFecha: "Domingo 28 de junio, 2026 · 5:00 p.m.",
-  ceremoniaLugar: "Caña — La Casa Negra, Bogotá",
+  ceremoniaLugar: "Caña — La Casa Negra · Calle 54a #4-26, Bogotá",
   ceremoniaOficia: "Una sacerdotisa amiga, en una ceremonia íntima y a nuestra manera",
   ceremoniaNota:
     "Llega con tiempo: la ceremonia empieza puntual y queremos que no te pierdas ni un instante.",
 
+  // --- Cóctel (solo invitación de ceremonia) ---
+  coctelFecha: "Justo después de la ceremonia · hasta las 10:00 p.m.",
+  coctelLugar: "Caña — La Casa Negra · Calle 54a #4-26, Bogotá",
+  coctelQue: "Cócteles, brindis y muy buena compañía",
+  coctelNota:
+    "Quédate con nosotros: la celebración sigue sin pausa después del sí… y tenemos un par de sorpresas guardadas. 😉",
+
   // --- Fiesta ---
   fiestaFecha: "Domingo 28 de junio, 2026 · desde las 10:00 p.m.",
-  fiestaLugar: "Caña — La Casa Negra, Bogotá",
-  fiestaQue: "Cócteles, música y baile hasta tarde",
+  fiestaLugar: "Caña — La Casa Negra · Calle 54a #4-26, Bogotá",
+  fiestaQue: "Música y baile hasta tarde",
 
   // --- Nota de acompañantes (solo invitación de ceremonia) ---
   plusOne:
     "La ceremonia es un momento muy íntimo, así que la reservamos solo para ti — " +
     "sin acompañantes. Pero no te preocupes: te regalamos una " +
     "<strong>invitación extra para la fiesta</strong>, para que tu +1 llegue a " +
-    "celebrar con nosotros apenas empiece la rumba.",
+    "celebrar con nosotros a partir de las 10:00 p.m.",
 
   // --- Dress code ---
   dress:
@@ -45,9 +52,11 @@ const CONFIG = {
 
   // --- Lugar ---
   lugarTexto:
-    "Un bar con alma en el corazón de Bogotá. Aquí nos daremos el sí y aquí mismo " +
-    "seguiremos la fiesta.",
-  mapaUrl: "https://www.instagram.com/lacasanegra.bog/",   // ← perfil del lugar
+    "Un bar con alma en el corazón de Bogotá. Aquí nos daremos el sí, aquí brindaremos " +
+    "y aquí mismo seguiremos la fiesta — todo en el mismo lugar. Calle 54a #4-26.",
+  mapaUrl:
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent("Calle 54a #4-26, Bogotá, Colombia 110231"),
 
   // --- RSVP ---
   rsvpTexto:
