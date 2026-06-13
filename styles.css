@@ -17,7 +17,9 @@
   --border: #e5e5e5;
   --border-light: rgba(13,13,13,0.05);
 
-  --font: "General Sans", ui-sans-serif, -apple-system, system-ui, sans-serif;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "General Sans", ui-sans-serif, -apple-system, system-ui, sans-serif;
+  --font: "Newsreader", Georgia, serif;
   --maxw: 640px;
   --radius: 16px;
 }
@@ -29,9 +31,9 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font);
-  font-size: 18px;
-  line-height: 1.65;
+  font-family: var(--serif);
+  font-size: 19px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -49,6 +51,7 @@ main, .hero { position: relative; z-index: 1; }
 /* ============ Tipografía base ============ */
 .label {
   display: block;
+  font-family: var(--sans);
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.72rem;
@@ -57,10 +60,10 @@ main, .hero { position: relative; z-index: 1; }
   margin: 0 0 14px;
 }
 .title {
-  font-size: clamp(1.9rem, 6vw, 2.7rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
   margin: 0 0 22px;
   color: var(--foreground);
 }
@@ -80,26 +83,27 @@ main, .hero { position: relative; z-index: 1; }
   text-align: center; padding: 8vh 24px 5vh;
 }
 .eyebrow {
-  font-size: 1rem; color: var(--muted); margin: 0 0 16px; font-weight: 500;
+  font-size: 1.05rem; font-style: italic; color: var(--muted); margin: 0 0 16px; font-weight: 400;
 }
 .eyebrow:empty { display: none; }
 .kicker {
+  font-family: var(--sans);
   text-transform: uppercase; letter-spacing: 0.18em;
   font-size: 0.78rem; font-weight: 600; color: var(--gray-500);
   margin: 0 0 22px; padding-left: 0.18em;
 }
 .hero__names {
-  font-size: clamp(2.8rem, 12vw, 5.4rem);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.0;
+  font-size: clamp(2.9rem, 12vw, 5.6rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
   margin: 0 0 26px;
   color: var(--foreground);
   display: flex; flex-direction: column; align-items: center; gap: 0;
 }
 .hero__amp {
-  font-weight: 400; color: var(--gray-400);
-  font-size: 0.5em; line-height: 1.4; margin: 4px 0;
+  font-style: italic; font-weight: 400; color: var(--gray-400);
+  font-size: 0.46em; line-height: 1.5; margin: 4px 0;
 }
 .hero__meta {
   display: inline-flex; align-items: center; gap: 12px;
@@ -109,7 +113,7 @@ main, .hero { position: relative; z-index: 1; }
 .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gray-300); display: inline-block; }
 
 .hero__scroll {
-  margin: 40px 0 0; text-transform: uppercase;
+  margin: 40px 0 0; font-family: var(--sans); text-transform: uppercase;
   letter-spacing: 0.22em; font-size: 0.66rem; color: var(--gray-400); font-weight: 600;
   animation: float 2.4s ease-in-out infinite;
 }
@@ -146,10 +150,10 @@ main, .hero { position: relative; z-index: 1; }
 }
 .event__row:last-child { border-bottom: none; }
 .event__label {
-  text-transform: uppercase; letter-spacing: 0.08em;
-  font-size: 0.68rem; font-weight: 600; color: var(--gray-500); padding-top: 3px;
+  font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.08em;
+  font-size: 0.68rem; font-weight: 600; color: var(--gray-500); padding-top: 5px;
 }
-.event__value { font-size: 1.05rem; color: var(--foreground); font-weight: 500; }
+.event__value { font-size: 1.08rem; color: var(--foreground); font-weight: 500; }
 
 /* ============ TARJETA (+1) ============ */
 .card {
@@ -165,8 +169,8 @@ main, .hero { position: relative; z-index: 1; }
 
 /* ============ BOTONES ============ */
 .btn {
-  display: inline-block; font-family: var(--font);
-  font-size: 0.92rem; font-weight: 600; letter-spacing: -0.01em;
+  display: inline-block; font-family: var(--sans);
+  font-size: 0.9rem; font-weight: 600; letter-spacing: 0;
   text-decoration: none; padding: 12px 22px; border-radius: 12px;
   transition: all 0.18s ease; cursor: pointer; border: 1px solid transparent;
 }
@@ -187,11 +191,11 @@ main, .hero { position: relative; z-index: 1; }
 }
 .closing__label { color: var(--muted); font-size: 1rem; margin: 0 0 10px; }
 .closing__names {
-  font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 600;
-  letter-spacing: -0.02em; margin: 0 0 16px;
+  font-size: clamp(1.7rem, 5vw, 2.3rem); font-weight: 500;
+  letter-spacing: -0.01em; margin: 0 0 16px;
 }
 .closing__hashtag {
-  text-transform: uppercase; letter-spacing: 0.12em;
+  font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.12em;
   font-size: 0.72rem; font-weight: 600; color: var(--gray-500); margin: 0;
 }
 
