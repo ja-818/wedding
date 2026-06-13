@@ -3,8 +3,8 @@
    ============================================================ */
 const CONFIG = {
   // --- Pareja (compartido) ---
-  nombre1: "Julián",
-  nombre2: "Valentina",
+  nombre1: "Valentina",
+  nombre2: "Julián",
   fechaCorta: "28 de Junio",
 
   // --- Lugar (compartido) ---
@@ -31,7 +31,6 @@ const CONFIG = {
         text: "Vestido tipo cóctel (a la rodilla o midi), conjunto elegante de dos piezas o enterizo elegante con tacones.",
       },
     ],
-    sign: "Con cariño, Valentina & Julián",
   },
 
   // --- RSVP (compartido) ---
@@ -79,7 +78,7 @@ const CONFIG = {
       flyerCuando: "Domingo 28 de junio · 10:00 p.m. – 2:00 a.m.",
       flyerDonde: "Caña · Calle 54a #4-26, Bogotá",
       flyerDress: "Cóctel",
-      waMensaje: "¡Hola! Confirmo mi asistencia a la fiesta de Julián y Valentina. 🥂",
+      waMensaje: "¡Hola! Confirmo mi asistencia a la fiesta de Valentina y Julián. 🥂",
     },
   },
 };
@@ -130,7 +129,6 @@ function dressCodeHTML(dc) {
     `<p class="dc__avoid">${dc.avoid}</p>` +
     `<div class="dc__swatches">${swatches}</div>` +
     options +
-    `<p class="dc__sign">${dc.sign}</p>` +
     `</div>`
   );
 }

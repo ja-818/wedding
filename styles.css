@@ -117,6 +117,17 @@ main, .hero { position: relative; z-index: 1; }
   line-height: 1.7;
 }
 
+/* Card de "La invitación" */
+.card--intro { text-align: left; max-width: 560px; }
+.card--intro .intro-copy { max-width: none; }
+
+/* Subtítulo del lugar */
+.place__sub {
+  font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.22em;
+  font-size: 0.66rem; font-weight: 600; color: var(--gray-500);
+  margin: -8px 0 20px; padding-left: 0.22em;
+}
+
 /* Copy de intro en dos párrafos */
 .intro-copy { max-width: 540px; margin: 0 auto; }
 .intro-copy p {
@@ -158,6 +169,7 @@ main, .hero { position: relative; z-index: 1; }
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
 }
 .dc__opt { margin: 0 0 20px; }
+.dc__opt:last-child { margin-bottom: 0; }
 .dc__opt-label {
   font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.12em;
   font-size: 0.66rem; font-weight: 600; color: var(--gray-500); margin: 0 0 6px;
