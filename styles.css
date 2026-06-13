@@ -67,7 +67,7 @@ html:not(.is-fiesta) .only-fiesta { display: none !important; }
 
 /* En pantallas anchas (desktop) baja el encuadre para no cortar las caras */
 @media (min-width: 768px) {
-  .page-bg, .flyer__bg { object-position: center 60%; }
+  .page-bg, .flyer__bg { object-position: center 10%; }
 }
 .page-scrim {
   position: fixed; inset: 0; z-index: -1;
