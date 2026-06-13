@@ -200,15 +200,25 @@ if (musicBtn) {
   tag.src = "https://www.youtube.com/iframe_api";
   document.head.appendChild(tag);
 
+  let started = false; // ¿ya activamos el sonido?
+  const startAudio = () => {
+    if (started || !ytPlayer) return;
+    started = true;
+    try { ytPlayer.unMute(); ytPlayer.setVolume(55); ytPlayer.playVideo(); } catch (_) {}
+  };
+
   window.onYouTubeIframeAPIReady = function () {
     ytPlayer = new YT.Player("yt-player", {
       videoId: YT_VIDEO,
       playerVars: {
-        autoplay: 0, controls: 0, disablekb: 1, loop: 1,
+        autoplay: 1, mute: 1, controls: 0, disablekb: 1, loop: 1,
         playlist: YT_VIDEO, playsinline: 1, rel: 0, modestbranding: 1,
       },
       events: {
-        onReady: () => { musicBtn.hidden = false; },
+        onReady: () => {
+          musicBtn.hidden = false;
+          try { ytPlayer.mute(); ytPlayer.playVideo(); } catch (_) {} // autoplay en mudo
+        },
         onStateChange: (e) => {
           setPlaying(e.data === YT.PlayerState.PLAYING);
           if (e.data === YT.PlayerState.ENDED && ytPlayer) ytPlayer.playVideo();
@@ -217,13 +227,23 @@ if (musicBtn) {
     });
   };
 
+  // Activa el sonido en el primer gesto en cualquier parte (no requiere el botón)
+  const onFirstGesture = (e) => {
+    if (e.target && e.target.closest && e.target.closest("[data-music]")) return;
+    startAudio();
+  };
+  ["pointerdown", "touchstart", "keydown"].forEach((ev) =>
+    window.addEventListener(ev, onFirstGesture, { passive: true })
+  );
+
+  // El botón: activa/pausa manualmente
   musicBtn.addEventListener("click", () => {
     if (!ytPlayer || !ytPlayer.getPlayerState) return;
+    if (!started) { startAudio(); return; }
     if (ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
       ytPlayer.pauseVideo();
     } else {
-      ytPlayer.setVolume(55);
-      ytPlayer.playVideo();
+      ytPlayer.unMute(); ytPlayer.setVolume(55); ytPlayer.playVideo();
     }
   });
 }
