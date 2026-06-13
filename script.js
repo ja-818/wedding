@@ -77,9 +77,9 @@ const CONFIG = {
       // --- Flyer de fiesta ---
       flyerInvite: "Estás invitad@ a celebrar",
       flyerTag: "La fiesta de la boda",
-      flyerCuando: "Domingo 28 de junio · 10:00 p.m. – 2:00 a.m.",
+      flyerCuando: "Domingo 28 de junio",
+      flyerHorario: "10:00 p.m. – 2:00 a.m.",
       flyerDonde: "Caña · Calle 54a #4-26, Bogotá",
-      flyerDress: "Cóctel",
       flyerNote: "La barra va por cuenta de cada quien 🍸 ¡pero la fiesta la armamos todos!",
       waMensaje: "¡Hola! Confirmo mi asistencia a la fiesta de Valentina y Julián. 🥂",
     },
