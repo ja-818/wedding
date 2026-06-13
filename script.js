@@ -9,7 +9,7 @@ const CONFIG = {
 
   // --- Lugar (compartido) ---
   donde: "Caña — Aguardientería y Bodega · Calle 54a #4-26, Bogotá",
-  lugarTexto: "Un bar con alma en el corazón de Bogotá. Calle 54a #4-26.",
+  lugarTexto: "Un bar que nos representa.",
   mapaUrl: "https://maps.app.goo.gl/xLgopQqYxdpxYco28",
 
   // --- Dress code (compartido) ---
@@ -49,9 +49,8 @@ const CONFIG = {
         "<p>Queremos que la noche se sienta cercana, espontánea y auténtica, pero " +
         "también especial. Por eso, el dress code es <strong>Cóctel</strong>: " +
         "elegante, cómodo y con personalidad.</p>",
-      eventTag: "La boda",
-      eventTitle: "El gran día",
-      cuando: "Domingo 28 de junio, 2026 · de 5:00 p.m. a 2:00 a.m.",
+      cuando: "28 de Junio",
+      horario: "5:00 p.m. a 2:00 a.m.",
       barra:
         "De 5 a 10pm tenemos una experiencia etílica y gastronómica completamente " +
         "pensada para ti.<br><br>" +
