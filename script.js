@@ -10,6 +10,7 @@ const CONFIG = {
   // --- Lugar (compartido) ---
   donde: "Caña — Aguardientería y Bodega · Calle 54a #4-26, Bogotá",
   lugarTexto: "Un bar que nos representa.",
+  direccion: "Calle 54a #4-26, Chapinero, Bogotá",
   mapaUrl: "https://maps.app.goo.gl/xLgopQqYxdpxYco28",
 
   // --- Dress code (compartido) ---
