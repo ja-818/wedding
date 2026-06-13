@@ -70,6 +70,10 @@ html:not(.is-fiesta) .only-fiesta { display: none !important; }
   background: linear-gradient(180deg, rgba(10,10,10,0.26) 0%, rgba(10,10,10,0.44) 55%, rgba(10,10,10,0.62) 100%);
 }
 
+/* El video va encima de la foto y entra con un fundido al primer toque */
+.page-bg--video, .flyer__bg--video { opacity: 0; transition: opacity 0.8s ease; }
+.page-bg--video.is-on, .flyer__bg--video.is-on { opacity: 1; }
+
 body {
   margin: 0;
   background: transparent;   /* deja ver el video de fondo fijo */

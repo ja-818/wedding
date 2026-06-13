@@ -42,8 +42,9 @@
 <body>
   <div class="wash" aria-hidden="true"></div>
 
-  <!-- Fondo (vista boda) -->
-  <video class="page-bg only-boda" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/cana-poster.jpg" disablepictureinpicture aria-hidden="true">
+  <!-- Fondo (vista boda): primero la foto, el video entra al primer toque -->
+  <img class="page-bg only-boda" src="assets/cana-poster.jpg" alt="" aria-hidden="true" />
+  <video class="page-bg page-bg--video only-boda" muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-hidden="true">
     <source src="assets/cana.mp4" type="video/mp4" />
   </video>
   <div class="page-scrim only-boda" aria-hidden="true"></div>
@@ -143,7 +144,8 @@
        VISTA FIESTA (flyer de una sola pantalla)
        ===================================================== -->
   <section class="flyer only-fiesta" aria-label="Invitación a la fiesta">
-    <video class="flyer__bg" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/cana-poster.jpg" disablepictureinpicture aria-hidden="true">
+    <img class="flyer__bg" src="assets/cana-poster.jpg" alt="" aria-hidden="true" />
+    <video class="flyer__bg flyer__bg--video" muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture aria-hidden="true">
       <source src="assets/cana.mp4" type="video/mp4" />
     </video>
     <div class="flyer__scrim" aria-hidden="true"></div>

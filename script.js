@@ -186,27 +186,25 @@ document.querySelectorAll("[data-copy-fiesta]").forEach((btn) => {
 const waLink = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(vista.waMensaje)}`;
 document.querySelectorAll("[data-rsvp-link]").forEach((el) => el.setAttribute("href", waLink));
 
-// --- 5c. Reproducción robusta de los videos de fondo (móvil / bajo consumo) ---
-const bgVideos = document.querySelectorAll(".page-bg, .flyer__bg");
-function playBgVideos() {
+// --- 5c. Primero la foto; el video de fondo entra al primer gesto (todos los dispositivos) ---
+const bgVideos = document.querySelectorAll("video.page-bg, video.flyer__bg");
+let bgStarted = false;
+function startBgVideos() {
+  bgStarted = true;
   bgVideos.forEach((v) => {
-    if (typeof v.play !== "function") return;
-    v.muted = true;          // imprescindible para autoplay (Safari ignora el atributo a veces)
+    v.muted = true;          // imprescindible para reproducir sin sonido
     v.defaultMuted = true;
     const p = v.play();
     if (p && typeof p.catch === "function") p.catch(() => {});
+    v.classList.add("is-on"); // fade-in sobre la foto
   });
 }
-playBgVideos();
-bgVideos.forEach((v) => {
-  v.addEventListener("loadeddata", playBgVideos, { once: true });
-  v.addEventListener("canplay", playBgVideos, { once: true });
-});
-// Reintenta en el primer gesto (un toque siempre habilita el video, incluso en bajo consumo)
-["touchstart", "pointerdown", "click", "scroll", "keydown"].forEach((ev) =>
-  window.addEventListener(ev, playBgVideos, { once: true, passive: true })
+// Arranca con el primer toque / scroll / clic / tecla (antes se ve la foto)
+["touchstart", "pointerdown", "click", "scroll", "keydown", "mousemove"].forEach((ev) =>
+  window.addEventListener(ev, startBgVideos, { once: true, passive: true })
 );
-document.addEventListener("visibilitychange", () => { if (!document.hidden) playBgVideos(); });
+// Si vuelven a la pestaña y ya había arrancado, reanuda
+document.addEventListener("visibilitychange", () => { if (!document.hidden && bgStarted) startBgVideos(); });
 
 // --- 6. Revelado suave al hacer scroll ---
 const reveals = document.querySelectorAll(".reveal");
