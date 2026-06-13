@@ -29,7 +29,7 @@ const CONFIG = {
   vistas: {
     // -------- Invitados a la BODA (5 p.m. a 2 a.m.) --------
     ceremonia: {
-      heroEyebrow: "Con la bendición de quienes amamos",
+      heroEyebrow: "",
       heroKicker: "Nos casamos",
       introScript: "Te esperamos",
       intro:
@@ -82,6 +82,12 @@ document.title = `${CONFIG.nombre1} & ${CONFIG.nombre2} · ${esFiesta ? "La fies
 // Mezcla de valores: primero la vista, luego lo compartido
 const DATA = Object.assign({}, CONFIG, vista);
 
+// En la fiesta (one-pager, sin sección de lugar) añadimos el mapa junto a la dirección
+if (esFiesta) {
+  DATA.donde =
+    `${CONFIG.donde} — <a class="maplink" href="${CONFIG.mapaUrl}" target="_blank" rel="noopener">Ver mapa</a>`;
+}
+
 // --- 2. Rellenar textos ---
 document.querySelectorAll("[data-config]").forEach((el) => {
   const key = el.getAttribute("data-config");
@@ -94,7 +100,7 @@ document.querySelectorAll("[data-config-href]").forEach((el) => {
 
 // --- 3. Ocultar secciones exclusivas de la boda en la vista de fiesta ---
 if (esFiesta) {
-  document.querySelectorAll(".only-ceremonia").forEach((el) => el.remove());
+  document.querySelectorAll(".only-ceremonia, .hide-fiesta").forEach((el) => el.remove());
 }
 
 // --- 4. Enlace a la invitación de la FIESTA (para reenviar al +1) ---

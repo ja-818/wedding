@@ -81,6 +81,11 @@ main, .hero { position: relative; z-index: 1; }
   font-style: italic; color: var(--ink-soft);
   font-size: 0.95rem; letter-spacing: 0.02em; margin: 0 0 20px;
 }
+.hero__eyebrow:empty { display: none; }
+
+/* Enlace al mapa en línea (vista de fiesta) */
+.maplink { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.maplink:hover { border-color: var(--gold); }
 .hero__kicker {
   font-family: var(--deco);
   text-transform: uppercase; letter-spacing: 0.34em;
