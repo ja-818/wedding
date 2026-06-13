@@ -45,9 +45,10 @@ const CONFIG = {
         "<p>No imaginamos una boda llena de formalidades, sino una noche para " +
         "disfrutar sin afán de las personas que más queremos.</p>" +
         "<p>Elegimos un lugar con carácter, pensado para compartir, conversar, " +
-        "brindar, bailar y celebrar juntos. Queremos que la noche se sienta cercana, " +
-        "espontánea y auténtica, pero también especial. Por eso, el dress code es " +
-        "<strong>Cóctel</strong>: elegante, cómodo y con personalidad.</p>",
+        "brindar, bailar y celebrar juntos.</p>" +
+        "<p>Queremos que la noche se sienta cercana, espontánea y auténtica, pero " +
+        "también especial. Por eso, el dress code es <strong>Cóctel</strong>: " +
+        "elegante, cómodo y con personalidad.</p>",
       eventTag: "La boda",
       eventTitle: "El gran día",
       cuando: "Domingo 28 de junio, 2026 · de 5:00 p.m. a 2:00 a.m.",
