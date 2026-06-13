@@ -62,16 +62,16 @@ html:not(.is-fiesta) .only-fiesta { display: none !important; }
 .page-bg {
   position: fixed; inset: 0; width: 100%; height: 100%;
   object-fit: cover; z-index: -2;
-  filter: grayscale(1) brightness(0.34) contrast(1.05);
+  filter: grayscale(1) brightness(0.62) contrast(1.04);
 }
 .page-scrim {
   position: fixed; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.78) 55%, rgba(10,10,10,0.9) 100%);
+  background: linear-gradient(180deg, rgba(10,10,10,0.34) 0%, rgba(10,10,10,0.55) 55%, rgba(10,10,10,0.72) 100%);
 }
 
 body {
   margin: 0;
-  background: var(--background);
+  background: transparent;   /* deja ver el video de fondo fijo */
   color: var(--foreground);
   font-family: var(--serif);
   font-size: 19px;
@@ -126,12 +126,68 @@ main, .hero { position: relative; z-index: 1; }
 .intro-copy p:last-child { margin-bottom: 0; }
 .intro-copy strong { color: #fff; font-weight: 600; }
 
-/* Imagen de dress code */
-.dress-img {
-  display: block; width: 100%; max-width: 400px; height: auto;
-  margin: 6px auto 0; border-radius: 14px;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+/* ====== Dress code (tarjeta oscura) ====== */
+.dc {
+  text-align: center;
+  border: 1px solid var(--border);
+  background: rgba(22,22,22,0.82);
+  backdrop-filter: blur(6px);
+  border-radius: var(--radius);
+  padding: clamp(30px, 5vw, 44px) clamp(22px, 5vw, 40px);
+  max-width: 470px; margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
 }
+.dc__eyebrow {
+  font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.18em;
+  font-size: 0.66rem; font-weight: 600; color: var(--gray-500); margin: 0 0 10px;
+}
+.dc__title {
+  font-family: var(--serif); font-weight: 500; text-transform: uppercase;
+  font-size: clamp(1.7rem, 6vw, 2.2rem); letter-spacing: 0.16em;
+  margin: 0; color: #fff; padding-left: 0.16em;
+}
+.dc__rule { width: 46px; height: 1px; background: rgba(255,255,255,0.28); margin: 18px auto 22px; }
+.dc__avoid {
+  font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.1em;
+  font-size: 0.72rem; font-weight: 600; color: var(--muted); margin: 0 0 18px;
+}
+.dc__swatches { display: flex; justify-content: center; gap: 14px; margin: 0 0 30px; }
+.dc__swatches span {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--c); border: 1px solid rgba(255,255,255,0.22);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+}
+.dc__opt { margin: 0 0 20px; }
+.dc__opt-label {
+  font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.12em;
+  font-size: 0.66rem; font-weight: 600; color: var(--gray-500); margin: 0 0 6px;
+}
+.dc__opt-text {
+  font-family: var(--serif); font-size: 1.06rem; line-height: 1.5;
+  color: rgba(245,245,245,0.86); margin: 0 auto; max-width: 360px;
+}
+.dc__sign {
+  margin: 26px 0 0; font-family: var(--serif); font-style: italic;
+  color: var(--muted); font-size: 0.98rem;
+}
+
+/* ====== Modal (dress code en la fiesta) ====== */
+.modal[hidden] { display: none; }
+.modal {
+  position: fixed; inset: 0; z-index: 60;
+  display: flex; align-items: center; justify-content: center; padding: 22px;
+}
+.modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.72); backdrop-filter: blur(3px); }
+.modal__panel {
+  position: relative; z-index: 1; width: 100%; max-width: 470px;
+  max-height: 92svh; overflow-y: auto;
+}
+.modal__close {
+  position: absolute; top: 8px; right: 12px; z-index: 2;
+  background: transparent; border: none; color: var(--muted);
+  font-size: 1.7rem; line-height: 1; cursor: pointer; padding: 6px 10px;
+}
+.modal__close:hover { color: #fff; }
 
 /* Acciones del lugar */
 .place__actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
@@ -184,6 +240,11 @@ main, .hero { position: relative; z-index: 1; }
 .section {
   max-width: var(--maxw); margin: 0 auto;
   padding: clamp(40px, 7vw, 64px) 28px; text-align: center;
+}
+
+/* Legibilidad del texto que va sobre el video de fondo */
+.hero, .section--intro, .section--place, .closing {
+  text-shadow: 0 1px 18px rgba(10,10,10,0.55);
 }
 
 /* ============ CLIP (modo gif B/N) ============ */
@@ -270,13 +331,13 @@ main, .hero { position: relative; z-index: 1; }
 .flyer__bg {
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; z-index: 0;
-  filter: grayscale(1) brightness(0.42) contrast(1.05);
+  filter: grayscale(1) brightness(0.6) contrast(1.04);
 }
 .flyer__scrim {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.78) 60%, rgba(10,10,10,0.9) 100%),
-    radial-gradient(ellipse 70% 50% at 50% 50%, transparent, rgba(10,10,10,0.5));
+    linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.58) 60%, rgba(10,10,10,0.78) 100%),
+    radial-gradient(ellipse 75% 55% at 50% 50%, transparent, rgba(10,10,10,0.42));
 }
 .flyer__card {
   position: relative; z-index: 2;

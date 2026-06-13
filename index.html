@@ -86,11 +86,9 @@
       </div>
     </section>
 
-    <!-- DRESS CODE (imagen) -->
+    <!-- DRESS CODE -->
     <section class="section section--dress reveal" id="dresscode">
-      <span class="label">Código de vestimenta</span>
-      <img class="dress-img" src="assets/dresscode.png"
-           alt="Dress code Cóctel. Evita colores claros (blancos, cremas y beige). Opción traje: traje oscuro, camisa de vestir blanca, corbata opcional y zapatos formales. Opción vestido: vestido tipo cóctel a la rodilla o midi, conjunto elegante de dos piezas o enterizo elegante con tacones." />
+      <div class="dress-mount" data-dress-mount></div>
     </section>
 
     <!-- UBICACIÓN -->
@@ -128,7 +126,7 @@
       <!-- Logo de Caña (reemplazable por el logo real) -->
       <div class="flyer__logo">
         <span class="flyer__brand">Caña</span>
-        <span class="flyer__brand-sub">La Casa Negra</span>
+        <span class="flyer__brand-sub">Aguardientería y Bodega</span>
       </div>
 
       <p class="flyer__eyebrow" data-config="flyerInvite">Estás invitad@ a celebrar</p>
@@ -140,12 +138,21 @@
       <dl class="flyer__meta">
         <div><dt>Cuándo</dt><dd data-config="flyerCuando">Domingo 28 de junio · 10:00 p.m.</dd></div>
         <div><dt>Dónde</dt><dd data-config="flyerDonde">Caña · Calle 54a #4-26, Bogotá</dd></div>
-        <div><dt>Código</dt><dd><a class="flyer__inline" href="assets/dresscode.png" target="_blank" rel="noopener">Cóctel · ver dress code</a></dd></div>
+        <div><dt>Código</dt><dd><button class="flyer__inline" type="button" data-open-dress>Cóctel · ver dress code</button></dd></div>
       </dl>
 
       <a class="flyer__btn" data-config-href="mapaUrl" href="#" target="_blank" rel="noopener">Cómo llegar</a>
 
       <a class="flyer__ig" data-config-href="instagram" href="#" target="_blank" rel="noopener">@lacasanegra.bog</a>
+    </div>
+
+    <!-- Modal de dress code -->
+    <div class="modal" data-modal hidden>
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel">
+        <button class="modal__close" type="button" data-modal-close aria-label="Cerrar">&times;</button>
+        <div data-dress-mount></div>
+      </div>
     </div>
   </section>
 

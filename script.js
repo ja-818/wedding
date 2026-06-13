@@ -16,9 +16,23 @@ const CONFIG = {
     encodeURIComponent("Calle 54a #4-26, Bogotá, Colombia 110231"),
 
   // --- Dress code (compartido) ---
-  dress:
-    "Elegante pero relajado. Sácale brillo a tu mejor versión: vestidos de cóctel, " +
-    "trajes, looks con personalidad. Sin afanes y con mucho estilo.",
+  dressCode: {
+    eyebrow: "Código de vestimenta",
+    title: "Cóctel",
+    avoid: "Por favor, evita usar estos colores",
+    swatches: ["#ffffff", "#f1ede1", "#f4eccf", "#f0e1cf", "#cdb38d"],
+    options: [
+      {
+        label: "Opción traje",
+        text: "Traje oscuro, camisa de vestir blanca, corbata opcional y zapatos formales.",
+      },
+      {
+        label: "Opción vestido",
+        text: "Vestido tipo cóctel (a la rodilla o midi), conjunto elegante de dos piezas o enterizo elegante con tacones.",
+      },
+    ],
+    sign: "Con cariño, Valentina & Julián",
+  },
 
   // --- RSVP (compartido) ---
   rsvpFecha: "1 de junio",
@@ -100,6 +114,37 @@ if (esFiesta) {
   document.querySelectorAll(".only-boda").forEach((el) => el.remove());
 } else {
   document.querySelectorAll(".only-fiesta").forEach((el) => el.remove());
+}
+
+// --- 3b. Dress code (se construye en HTML, tema oscuro) ---
+function dressCodeHTML(dc) {
+  const swatches = dc.swatches.map((c) => `<span style="--c:${c}"></span>`).join("");
+  const options = dc.options
+    .map((o) => `<div class="dc__opt"><p class="dc__opt-label">${o.label}</p><p class="dc__opt-text">${o.text}</p></div>`)
+    .join("");
+  return (
+    `<div class="dc">` +
+    `<p class="dc__eyebrow">${dc.eyebrow}</p>` +
+    `<h3 class="dc__title">${dc.title}</h3>` +
+    `<div class="dc__rule"></div>` +
+    `<p class="dc__avoid">${dc.avoid}</p>` +
+    `<div class="dc__swatches">${swatches}</div>` +
+    options +
+    `<p class="dc__sign">${dc.sign}</p>` +
+    `</div>`
+  );
+}
+const DC_HTML = dressCodeHTML(CONFIG.dressCode);
+document.querySelectorAll("[data-dress-mount]").forEach((el) => { el.innerHTML = DC_HTML; });
+
+// Modal de dress code (vista de fiesta)
+const dressModal = document.querySelector("[data-modal]");
+if (dressModal) {
+  const openModal = () => { dressModal.hidden = false; document.body.style.overflow = "hidden"; };
+  const closeModal = () => { dressModal.hidden = true; document.body.style.overflow = ""; };
+  document.querySelectorAll("[data-open-dress]").forEach((b) => b.addEventListener("click", openModal));
+  dressModal.querySelectorAll("[data-modal-close]").forEach((b) => b.addEventListener("click", closeModal));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !dressModal.hidden) closeModal(); });
 }
 
 // --- 4. Enlace a la invitación de la FIESTA (para reenviar al +1) ---
