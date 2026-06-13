@@ -55,7 +55,7 @@ const CONFIG = {
         "De 5 a 10pm tenemos una experiencia etílica y gastronómica completamente " +
         "pensada para ti.<br><br>" +
         "Después de esto, la barra va por cuenta de cada quién.<br><br>" +
-        "Enfarrémonos y no te olvides de gastarle algo a los novios.",
+        "Enfarrémonos y no te olvides que tu regalo es gastarles algo a los novios!",
       plusOne:
         "Esta invitación es solo para ti — la boda es un momento íntimo y no contamos " +
         "con cupos para acompañantes. Pero tu +1 no se queda por fuera: puede unirse a " +
@@ -80,7 +80,7 @@ const CONFIG = {
       flyerCuando: "Domingo 28 de junio",
       flyerHorario: "10:00 p.m. – 2:00 a.m.",
       flyerDonde: "Calle 54a #4-26, Bogotá",
-      flyerNote: "La barra va por cuenta de cada quién. Enfarrémonos y no te olvides de gastarle algo a los novios.",
+      flyerNote: "La barra va por cuenta de cada quién. Enfarrémonos y no te olvides que tu regalo es gastarles algo a los novios!",
       waMensaje: "¡Hola! Confirmo mi asistencia a la fiesta de Valentina y Julián. 🥂",
     },
   },
