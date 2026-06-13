@@ -8,7 +8,7 @@ const CONFIG = {
   fechaCorta: "28 de Junio",
 
   // --- Lugar (compartido) ---
-  donde: "Aguardientería y Bodega · Calle 54a #4-26, Bogotá",
+  donde: "Caña — Aguardientería y Bodega · Calle 54a #4-26, Bogotá",
   lugarTexto: "Un bar con alma en el corazón de Bogotá. Calle 54a #4-26.",
   mapaUrl: "https://maps.app.goo.gl/xLgopQqYxdpxYco28",
 
@@ -42,8 +42,8 @@ const CONFIG = {
       heroKicker: "Nos casamos",
       introScript: "La invitación",
       intro:
-        "<p>No imaginamos una boda llena de formalidades, sino una noche para " +
-        "disfrutar sin afán de las personas que más queremos.</p>" +
+        "<p>Queremos una boda <em>sin</em> formalidades: una noche para disfrutar " +
+        "sin afán con las personas que más queremos.</p>" +
         "<p>Elegimos un lugar con carácter, pensado para compartir, conversar, " +
         "brindar, bailar y celebrar juntos.</p>" +
         "<p>Queremos que la noche se sienta cercana, espontánea y auténtica, pero " +
