@@ -8,7 +8,7 @@ const CONFIG = {
   fechaCorta: "28 de Junio",
 
   // --- Lugar (compartido) ---
-  donde: "Caña — Aguardientería y Bodega · Calle 54a #4-26, Bogotá",
+  donde: "Aguardientería y Bodega · Calle 54a #4-26, Bogotá",
   lugarTexto: "Un bar con alma en el corazón de Bogotá. Calle 54a #4-26.",
   mapaUrl: "https://maps.app.goo.gl/xLgopQqYxdpxYco28",
 
@@ -80,7 +80,7 @@ const CONFIG = {
       flyerTag: "La fiesta de la boda",
       flyerCuando: "Domingo 28 de junio",
       flyerHorario: "10:00 p.m. – 2:00 a.m.",
-      flyerDonde: "Caña · Calle 54a #4-26, Bogotá",
+      flyerDonde: "Calle 54a #4-26, Bogotá",
       flyerNote: "La barra va por cuenta de cada quién. Enfarrémonos y no te olvides de gastarle algo a los novios.",
       waMensaje: "¡Hola! Confirmo mi asistencia a la fiesta de Valentina y Julián. 🥂",
     },
