@@ -28,6 +28,12 @@
 <body>
   <div class="wash" aria-hidden="true"></div>
 
+  <!-- Video de fondo (vista boda) -->
+  <video class="page-bg only-boda" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="assets/cana.mp4" type="video/mp4" />
+  </video>
+  <div class="page-scrim only-boda" aria-hidden="true"></div>
+
   <!-- =====================================================
        VISTA BODA (página oscura completa)
        ===================================================== -->
@@ -40,31 +46,17 @@
     </h1>
 
     <div class="hero__meta">
-      <span data-config="fechaCorta">28 · Junio · 2026</span>
-      <span class="dot" aria-hidden="true"></span>
-      <span data-config="lugarCorto">Caña · Bogotá</span>
+      <span data-config="fechaCorta">28 de Junio</span>
     </div>
 
     <p class="hero__scroll" aria-hidden="true">Desliza</p>
   </header>
 
   <main class="only-boda">
-    <!-- CLIP (modo gif B/N) -->
-    <section class="section section--reel reveal" aria-hidden="true">
-      <figure class="reel">
-        <video class="reel__video" autoplay muted loop playsinline preload="auto">
-          <source src="assets/cana.mp4" type="video/mp4" />
-        </video>
-      </figure>
-    </section>
-
     <!-- INTRO -->
     <section class="section section--intro reveal">
       <p class="label" data-config="introScript">Te esperamos</p>
-      <p class="lede" data-config="intro">
-        Después de mucho camino juntos, queremos celebrar nuestro amor rodeados de
-        la gente que más queremos. Sin protocolos, con buena música y mejores tragos.
-      </p>
+      <div class="intro-copy" data-config="intro"></div>
     </section>
 
     <!-- EL PLAN -->
@@ -94,14 +86,11 @@
       </div>
     </section>
 
-    <!-- DRESS CODE -->
+    <!-- DRESS CODE (imagen) -->
     <section class="section section--dress reveal" id="dresscode">
       <span class="label">Código de vestimenta</span>
-      <h2 class="title">Cóctel</h2>
-      <p class="lede" data-config="dress">
-        Elegante pero relajado. Sácale brillo a tu mejor versión: vestidos de cóctel,
-        trajes, looks con personalidad. Sin afanes y con mucho estilo.
-      </p>
+      <img class="dress-img" src="assets/dresscode.png"
+           alt="Dress code Cóctel. Evita colores claros (blancos, cremas y beige). Opción traje: traje oscuro, camisa de vestir blanca, corbata opcional y zapatos formales. Opción vestido: vestido tipo cóctel a la rodilla o midi, conjunto elegante de dos piezas o enterizo elegante con tacones." />
     </section>
 
     <!-- UBICACIÓN -->
@@ -111,7 +100,10 @@
       <p class="lede" data-config="lugarTexto">
         Un bar con alma en el corazón de Bogotá. Calle 54a #4-26.
       </p>
-      <a class="btn btn--ghost" data-config-href="mapaUrl" href="#" target="_blank" rel="noopener">Ver en el mapa</a>
+      <div class="place__actions">
+        <a class="btn btn--ghost" data-config-href="mapaUrl" href="#" target="_blank" rel="noopener">Ver en el mapa</a>
+        <a class="btn btn--ghost" data-config-href="instagram" href="#" target="_blank" rel="noopener">@lacasanegra.bog</a>
+      </div>
     </section>
 
     <!-- CIERRE -->
@@ -148,10 +140,12 @@
       <dl class="flyer__meta">
         <div><dt>Cuándo</dt><dd data-config="flyerCuando">Domingo 28 de junio · 10:00 p.m.</dd></div>
         <div><dt>Dónde</dt><dd data-config="flyerDonde">Caña · Calle 54a #4-26, Bogotá</dd></div>
-        <div><dt>Código</dt><dd data-config="flyerDress">Cóctel</dd></div>
+        <div><dt>Código</dt><dd><a class="flyer__inline" href="assets/dresscode.png" target="_blank" rel="noopener">Cóctel · ver dress code</a></dd></div>
       </dl>
 
       <a class="flyer__btn" data-config-href="mapaUrl" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+
+      <a class="flyer__ig" data-config-href="instagram" href="#" target="_blank" rel="noopener">@lacasanegra.bog</a>
     </div>
   </section>
 

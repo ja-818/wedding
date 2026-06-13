@@ -5,13 +5,12 @@ const CONFIG = {
   // --- Pareja (compartido) ---
   nombre1: "Julián",
   nombre2: "Valentina",
-  hashtag: "#NuestraBodaEnCaña",
-  fechaCorta: "28 · Junio · 2026",
-  lugarCorto: "Caña · Bogotá",
+  fechaCorta: "28 de Junio",
 
   // --- Lugar (compartido) ---
   donde: "Caña — La Casa Negra · Calle 54a #4-26, Bogotá",
   lugarTexto: "Un bar con alma en el corazón de Bogotá. Calle 54a #4-26.",
+  instagram: "https://www.instagram.com/lacasanegra.bog/",
   mapaUrl:
     "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent("Calle 54a #4-26, Bogotá, Colombia 110231"),
@@ -31,10 +30,14 @@ const CONFIG = {
     ceremonia: {
       heroEyebrow: "",
       heroKicker: "Nos casamos",
-      introScript: "Te esperamos",
+      introScript: "La invitación",
       intro:
-        "Después de mucho camino juntos, queremos celebrar nuestro amor rodeados de " +
-        "la gente que más queremos. Sin protocolos, con buena música y mejores tragos.",
+        "<p>No imaginamos una boda llena de formalidades, sino una noche para " +
+        "disfrutar sin afán de las personas que más queremos.</p>" +
+        "<p>Elegimos un lugar con carácter, pensado para compartir, conversar, " +
+        "brindar, bailar y celebrar juntos. Queremos que la noche se sienta cercana, " +
+        "espontánea y auténtica, pero también especial. Por eso, el dress code es " +
+        "<strong>Cóctel</strong>: elegante, cómodo y con personalidad.</p>",
       eventTag: "La boda",
       eventTitle: "El gran día",
       cuando: "Domingo 28 de junio, 2026 · de 5:00 p.m. a 2:00 a.m.",
