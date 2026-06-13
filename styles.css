@@ -24,8 +24,35 @@
   --radius: 16px;
 }
 
+/* ============ TEMA OSCURO (vista de fiesta) ============ */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #f5f5f5;
+  --muted: #a6a6a6;
+  --gray-50:  #161616;
+  --gray-100: #1f1f1f;
+  --gray-200: #262626;
+  --gray-300: rgba(255,255,255,0.28);
+  --gray-400: #6e6e6e;
+  --gray-500: #8f8f8f;
+  --gray-600: #b0b0b0;
+  --border: rgba(255,255,255,0.12);
+  --border-light: rgba(255,255,255,0.06);
+}
+html.dark body { color-scheme: dark; }
+html.dark .wash {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 100%, rgba(255,255,255,0.05), transparent),
+    radial-gradient(ellipse 60% 50% at 85% 0%, rgba(255,255,255,0.035), transparent);
+}
+html.dark .btn--solid { background: #fff; color: #0a0a0a; border-color: #fff; }
+html.dark .btn--solid:hover { background: #ececec; }
+html.dark .btn--ghost { background: transparent; }
+html.dark .reel__video { box-shadow: 0 16px 50px rgba(0,0,0,0.6); }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html.dark { background: #0a0a0a; }
 
 body {
   margin: 0;

@@ -13,6 +13,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Tema oscuro para la vista de fiesta (antes de pintar, sin parpadeo) -->
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      if ((p.get("invitacion") || "").toLowerCase() === "fiesta") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
 </head>
 <body>
   <div class="wash" aria-hidden="true"></div>
@@ -107,7 +117,6 @@
       <p class="closing__names">
         <span data-config="nombre1">Julián</span> &amp; <span data-config="nombre2">Valentina</span>
       </p>
-      <p class="closing__hashtag" data-config="hashtag">#NuestraBodaEnCaña</p>
     </footer>
   </main>
 
