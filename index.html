@@ -3,124 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nuestra Boda · Caña, Bogotá</title>
+  <title>Julián & Valentina · Caña, Bogotá</title>
   <meta name="description" content="Nos casamos en Caña, Bogotá. Acompáñanos a celebrar." />
 
-  <!-- Tipografías vintage -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Decoración de fondo -->
-  <div class="paper-grain" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
 
   <!-- ============ PORTADA ============ -->
   <header class="hero" id="inicio">
     <div class="hero__frame">
-      <div class="ornament ornament--top" aria-hidden="true">
-        <svg viewBox="0 0 240 40" width="240" height="40"><path d="M10 20 H95 M145 20 H230" stroke="currentColor" stroke-width="1" fill="none"/><path d="M120 8 C112 14 112 26 120 32 C128 26 128 14 120 8 Z" fill="currentColor"/><circle cx="98" cy="20" r="2.5" fill="currentColor"/><circle cx="142" cy="20" r="2.5" fill="currentColor"/></svg>
-      </div>
-
-      <p class="hero__eyebrow">Con la bendición de quienes amamos</p>
-      <p class="hero__kicker">Nos casamos</p>
+      <p class="hero__eyebrow" data-config="heroEyebrow">Con la bendición de quienes amamos</p>
+      <p class="hero__kicker" data-config="heroKicker">Nos casamos</p>
 
       <h1 class="hero__names">
         <span data-config="nombre1">Julián</span>
         <span class="hero__amp">&amp;</span>
-        <span data-config="nombre2">Nombre</span>
+        <span data-config="nombre2">Valentina</span>
       </h1>
 
       <div class="hero__meta">
-        <span data-config="fechaCorta">15 · Noviembre · 2026</span>
+        <span data-config="fechaCorta">28 · Junio · 2026</span>
         <span class="hero__dot" aria-hidden="true">✦</span>
         <span data-config="lugarCorto">Caña · Bogotá</span>
       </div>
 
-      <div class="ornament ornament--bottom" aria-hidden="true">
-        <svg viewBox="0 0 120 60" width="120" height="60"><path d="M60 6 C60 6 40 22 40 38 C40 50 50 54 60 54 C70 54 80 50 80 38 C80 22 60 6 60 6 Z" fill="none" stroke="currentColor" stroke-width="1"/><path d="M60 14 L60 48" stroke="currentColor" stroke-width="0.8"/><path d="M60 26 L50 20 M60 26 L70 20 M60 36 L48 30 M60 36 L72 30" stroke="currentColor" stroke-width="0.8"/></svg>
+      <div class="ornament" aria-hidden="true">
+        <svg viewBox="0 0 120 50" width="120" height="50"><path d="M10 25 H45 M75 25 H110" stroke="currentColor" stroke-width="1"/><path d="M60 10 L66 25 L60 40 L54 25 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="25" r="2" fill="currentColor"/></svg>
       </div>
     </div>
-
     <p class="hero__scroll" aria-hidden="true">Desliza</p>
   </header>
 
   <main>
-    <!-- Etiqueta dinámica del tipo de invitación -->
-    <p class="invite-badge" data-invite-badge></p>
+    <!-- ============ CLIP (modo gif B/N) ============ -->
+    <section class="section section--reel reveal" aria-hidden="true">
+      <figure class="reel">
+        <video class="reel__video" autoplay muted loop playsinline preload="auto"
+               poster="">
+          <source src="assets/cana.mp4" type="video/mp4" />
+        </video>
+      </figure>
+    </section>
 
     <!-- ============ INTRO ============ -->
     <section class="section section--intro reveal">
-      <p class="script-accent">Te esperamos</p>
+      <p class="script-accent" data-config="introScript">Te esperamos</p>
       <p class="lede" data-config="intro">
         Después de mucho camino juntos, queremos celebrar nuestro amor rodeados de
-        la gente que más queremos. Será una tarde sin protocolos, con buena música,
-        buenos tragos y mejor compañía. Nos encantaría que seas parte de ella.
+        la gente que más queremos. Sin protocolos, con buena música y mejores tragos.
       </p>
     </section>
 
     <div class="divider reveal" aria-hidden="true">
-      <svg viewBox="0 0 300 24" width="300" height="24"><path d="M0 12 H120 M180 12 H300" stroke="currentColor" stroke-width="1"/><path d="M150 2 C144 7 144 17 150 22 C156 17 156 7 150 2 Z" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/><circle cx="172" cy="12" r="2" fill="currentColor"/></svg>
+      <svg viewBox="0 0 300 24" width="300" height="24"><path d="M0 12 H120 M180 12 H300" stroke="currentColor" stroke-width="1"/><path d="M150 3 L156 12 L150 21 L144 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="128" cy="12" r="2" fill="currentColor"/><circle cx="172" cy="12" r="2" fill="currentColor"/></svg>
     </div>
 
-    <!-- ============ CEREMONIA (solo invitación de ceremonia) ============ -->
-    <section class="section section--event only-ceremonia reveal" id="ceremonia">
-      <span class="event__tag">La ceremonia</span>
-      <h2 class="event__title">Nos damos el sí</h2>
+    <!-- ============ EL PLAN ============ -->
+    <section class="section section--event reveal" id="plan">
+      <span class="event__tag" data-config="eventTag">La boda</span>
+      <h2 class="event__title" data-config="eventTitle">El gran día</h2>
       <div class="event__grid">
-        <div class="event__row"><span class="event__label">Cuándo</span><span class="event__value" data-config="ceremoniaFecha">Domingo 15 de noviembre, 2026 · 4:00 p.m.</span></div>
-        <div class="event__row"><span class="event__label">Dónde</span><span class="event__value" data-config="ceremoniaLugar">Caña — Cra. 00 #00-00, Bogotá</span></div>
-        <div class="event__row"><span class="event__label">Oficia</span><span class="event__value" data-config="ceremoniaOficia">Una sacerdotisa amiga, en una ceremonia íntima y a nuestra manera</span></div>
-      </div>
-      <p class="event__note" data-config="ceremoniaNota">
-        Llega con tiempo: la ceremonia empieza puntual y queremos que no te pierdas ni un instante.
-      </p>
-    </section>
-
-    <!-- ============ CÓCTEL (solo invitación de ceremonia) ============ -->
-    <section class="section section--event only-ceremonia reveal" id="coctel">
-      <span class="event__tag">El cóctel</span>
-      <h2 class="event__title">Y seguimos celebrando</h2>
-      <div class="event__grid">
-        <div class="event__row"><span class="event__label">Cuándo</span><span class="event__value" data-config="coctelFecha">Justo después de la ceremonia · hasta las 10:00 p.m.</span></div>
-        <div class="event__row"><span class="event__label">Dónde</span><span class="event__value" data-config="coctelLugar">Caña — La Casa Negra · Calle 54a #4-26, Bogotá</span></div>
-        <div class="event__row"><span class="event__label">Qué habrá</span><span class="event__value" data-config="coctelQue">Cócteles, brindis y muy buena compañía</span></div>
-      </div>
-      <p class="event__note" data-config="coctelNota">
-        Quédate con nosotros: la celebración sigue sin pausa después del sí… y tenemos un par de sorpresas guardadas. 😉
-      </p>
-    </section>
-
-    <!-- ============ FIESTA (todos) ============ -->
-    <section class="section section--event reveal" id="fiesta">
-      <span class="event__tag">La celebración</span>
-      <h2 class="event__title">Y después… ¡a celebrar!</h2>
-      <div class="event__grid">
-        <div class="event__row"><span class="event__label">Cuándo</span><span class="event__value" data-config="fiestaFecha">Domingo 15 de noviembre, 2026 · desde las 6:00 p.m.</span></div>
-        <div class="event__row"><span class="event__label">Dónde</span><span class="event__value" data-config="fiestaLugar">Caña — Cra. 00 #00-00, Bogotá</span></div>
-        <div class="event__row"><span class="event__label">Qué habrá</span><span class="event__value" data-config="fiestaQue">Cócteles, música y baile hasta tarde</span></div>
+        <div class="event__row"><span class="event__label">Cuándo</span><span class="event__value" data-config="cuando">Domingo 28 de junio, 2026 · de 5:00 p.m. a 2:00 a.m.</span></div>
+        <div class="event__row"><span class="event__label">Dónde</span><span class="event__value" data-config="donde">Caña — La Casa Negra · Calle 54a #4-26, Bogotá</span></div>
       </div>
     </section>
 
-    <div class="divider reveal" aria-hidden="true">
-      <svg viewBox="0 0 300 24" width="300" height="24"><path d="M0 12 H120 M180 12 H300" stroke="currentColor" stroke-width="1"/><path d="M150 2 C144 7 144 17 150 22 C156 17 156 7 150 2 Z" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/><circle cx="172" cy="12" r="2" fill="currentColor"/></svg>
-    </div>
-
-    <!-- ============ NOTA DE ACOMPAÑANTES (solo ceremonia) ============ -->
+    <!-- ============ ACOMPAÑANTE / +1 (solo ceremonia) ============ -->
     <section class="section section--plusone only-ceremonia reveal">
       <div class="plusone__card">
         <span class="plusone__icon" aria-hidden="true">✦</span>
-        <h3 class="plusone__title">Sobre tu acompañante</h3>
+        <h3 class="plusone__title">¿Vienes con alguien?</h3>
         <p class="plusone__text" data-config="plusOne">
-          La ceremonia es un momento muy íntimo, así que la reservamos solo para ti —
-          sin acompañantes. Pero no te preocupes: te regalamos una
-          <strong>invitación extra para la fiesta</strong>, para que tu +1 llegue a
-          celebrar con nosotros apenas empiece la rumba.
+          Esta invitación es solo para ti — la boda es un momento íntimo y no
+          contamos con cupos para acompañantes. Pero tu +1 no se queda por fuera:
+          puede unirse a la fiesta <strong>a partir de las 10:00 p.m.</strong>
         </p>
+        <p class="plusone__cta-label">¿Quieres invitarlo? Envíale la invitación a la fiesta:</p>
+        <div class="plusone__actions">
+          <a class="btn btn--solid" data-fiesta-link href="#" target="_blank" rel="noopener">Abrir invitación a la fiesta</a>
+          <button class="btn btn--ghost" type="button" data-copy-fiesta>Copiar enlace</button>
+        </div>
       </div>
     </section>
+
+    <div class="divider reveal" aria-hidden="true">
+      <svg viewBox="0 0 300 24" width="300" height="24"><path d="M0 12 H120 M180 12 H300" stroke="currentColor" stroke-width="1"/><path d="M150 3 L156 12 L150 21 L144 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="128" cy="12" r="2" fill="currentColor"/><circle cx="172" cy="12" r="2" fill="currentColor"/></svg>
+    </div>
 
     <!-- ============ DRESS CODE ============ -->
     <section class="section section--dress reveal" id="dresscode">
@@ -132,17 +107,12 @@
       </p>
     </section>
 
-    <div class="divider reveal" aria-hidden="true">
-      <svg viewBox="0 0 300 24" width="300" height="24"><path d="M0 12 H120 M180 12 H300" stroke="currentColor" stroke-width="1"/><path d="M150 2 C144 7 144 17 150 22 C156 17 156 7 150 2 Z" fill="currentColor"/><circle cx="128" cy="12" r="2" fill="currentColor"/><circle cx="172" cy="12" r="2" fill="currentColor"/></svg>
-    </div>
-
     <!-- ============ UBICACIÓN ============ -->
     <section class="section section--place reveal" id="ubicacion">
       <span class="event__tag">El lugar</span>
       <h2 class="event__title">Caña</h2>
       <p class="place__text" data-config="lugarTexto">
-        Un bar con alma en el corazón de Bogotá. Aquí nos daremos el sí y aquí mismo
-        seguiremos la fiesta.
+        Un bar con alma en el corazón de Bogotá. Calle 54a #4-26.
       </p>
       <a class="btn btn--ghost" data-config-href="mapaUrl" href="#" target="_blank" rel="noopener">Ver en el mapa</a>
     </section>
@@ -150,12 +120,12 @@
     <!-- ============ RSVP ============ -->
     <section class="section section--rsvp reveal" id="rsvp">
       <div class="ornament" aria-hidden="true">
-        <svg viewBox="0 0 240 40" width="240" height="40"><path d="M10 20 H95 M145 20 H230" stroke="currentColor" stroke-width="1" fill="none"/><path d="M120 8 C112 14 112 26 120 32 C128 26 128 14 120 8 Z" fill="currentColor"/><circle cx="98" cy="20" r="2.5" fill="currentColor"/><circle cx="142" cy="20" r="2.5" fill="currentColor"/></svg>
+        <svg viewBox="0 0 120 50" width="120" height="50"><path d="M10 25 H45 M75 25 H110" stroke="currentColor" stroke-width="1"/><path d="M60 10 L66 25 L60 40 L54 25 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="25" r="2" fill="currentColor"/></svg>
       </div>
       <p class="script-accent">Confirma tu asistencia</p>
       <p class="rsvp__text" data-config="rsvpTexto">
         Para organizarlo todo con cariño, te pedimos confirmar antes del
-        <strong data-config="rsvpFecha">1 de noviembre</strong>. ¡Escríbenos!
+        <strong>1 de junio</strong>. ¡Escríbenos!
       </p>
       <a class="btn btn--solid" data-rsvp-link href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
     </section>
@@ -164,7 +134,7 @@
     <footer class="closing reveal">
       <p class="closing__script">Con amor,</p>
       <p class="closing__names">
-        <span data-config="nombre1">Julián</span> &amp; <span data-config="nombre2">Nombre</span>
+        <span data-config="nombre1">Julián</span> &amp; <span data-config="nombre2">Valentina</span>
       </p>
       <p class="closing__hashtag" data-config="hashtag">#NuestraBodaEnCaña</p>
     </footer>

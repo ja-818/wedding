@@ -1,127 +1,135 @@
 /* ============================================================
    CONFIGURACIÓN — EDITA AQUÍ TODOS TUS DATOS
-   ------------------------------------------------------------
-   Cambia los valores entre comillas. Eso es todo.
    ============================================================ */
 const CONFIG = {
-  // --- Pareja ---
+  // --- Pareja (compartido) ---
   nombre1: "Julián",
   nombre2: "Valentina",
   hashtag: "#NuestraBodaEnCaña",
-
-  // --- Portada ---
   fechaCorta: "28 · Junio · 2026",
   lugarCorto: "Caña · Bogotá",
 
-  // --- Intro ---
-  intro:
-    "Después de mucho camino juntos, queremos celebrar nuestro amor rodeados de " +
-    "la gente que más queremos. Será una tarde sin protocolos, con buena música, " +
-    "buenos tragos y mejor compañía. Nos encantaría que seas parte de ella.",
-
-  // --- Ceremonia ---
-  ceremoniaFecha: "Domingo 28 de junio, 2026 · 5:00 p.m.",
-  ceremoniaLugar: "Caña — La Casa Negra · Calle 54a #4-26, Bogotá",
-  ceremoniaOficia: "Una sacerdotisa amiga, en una ceremonia íntima y a nuestra manera",
-  ceremoniaNota:
-    "Llega con tiempo: la ceremonia empieza puntual y queremos que no te pierdas ni un instante.",
-
-  // --- Cóctel (solo invitación de ceremonia) ---
-  coctelFecha: "Justo después de la ceremonia · hasta las 10:00 p.m.",
-  coctelLugar: "Caña — La Casa Negra · Calle 54a #4-26, Bogotá",
-  coctelQue: "Cócteles, brindis y muy buena compañía",
-  coctelNota:
-    "Quédate con nosotros: la celebración sigue sin pausa después del sí… y tenemos un par de sorpresas guardadas. 😉",
-
-  // --- Fiesta ---
-  fiestaFecha: "Domingo 28 de junio, 2026 · desde las 10:00 p.m.",
-  fiestaLugar: "Caña — La Casa Negra · Calle 54a #4-26, Bogotá",
-  fiestaQue: "Música y baile hasta tarde",
-
-  // --- Nota de acompañantes (solo invitación de ceremonia) ---
-  plusOne:
-    "La ceremonia es un momento muy íntimo, así que la reservamos solo para ti — " +
-    "sin acompañantes. Pero no te preocupes: te regalamos una " +
-    "<strong>invitación extra para la fiesta</strong>, para que tu +1 llegue a " +
-    "celebrar con nosotros a partir de las 10:00 p.m.",
-
-  // --- Dress code ---
-  dress:
-    "Elegante pero relajado. Sácale brillo a tu mejor versión: vestidos de cóctel, " +
-    "trajes, looks con personalidad. Sin afanes y con mucho estilo.",
-
-  // --- Lugar ---
-  lugarTexto:
-    "Un bar con alma en el corazón de Bogotá. Aquí nos daremos el sí, aquí brindaremos " +
-    "y aquí mismo seguiremos la fiesta — todo en el mismo lugar. Calle 54a #4-26.",
+  // --- Lugar (compartido) ---
+  donde: "Caña — La Casa Negra · Calle 54a #4-26, Bogotá",
+  lugarTexto: "Un bar con alma en el corazón de Bogotá. Calle 54a #4-26.",
   mapaUrl:
     "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent("Calle 54a #4-26, Bogotá, Colombia 110231"),
 
-  // --- RSVP ---
-  rsvpTexto:
-    "Para organizarlo todo con cariño, te pedimos confirmar antes del " +
-    "<strong data-config=\"rsvpFecha\">1 de noviembre</strong>. ¡Escríbenos!",
-  rsvpFecha: "1 de noviembre",
+  // --- Dress code (compartido) ---
+  dress:
+    "Elegante pero relajado. Sácale brillo a tu mejor versión: vestidos de cóctel, " +
+    "trajes, looks con personalidad. Sin afanes y con mucho estilo.",
+
+  // --- RSVP (compartido) ---
+  rsvpFecha: "1 de junio",
   whatsapp: "573138282536",   // ← número con código de país, sin + ni espacios
 
-  // --- Textos del badge según el tipo de invitación ---
-  badgeCeremonia: "Tu invitación incluye la ceremonia y la fiesta.",
-  badgeFiesta: "Tu invitación es para la celebración.",
+  // ====== TEXTOS POR VISTA ======
+  vistas: {
+    // -------- Invitados a la BODA (5 p.m. a 2 a.m.) --------
+    ceremonia: {
+      heroEyebrow: "Con la bendición de quienes amamos",
+      heroKicker: "Nos casamos",
+      introScript: "Te esperamos",
+      intro:
+        "Después de mucho camino juntos, queremos celebrar nuestro amor rodeados de " +
+        "la gente que más queremos. Sin protocolos, con buena música y mejores tragos.",
+      eventTag: "La boda",
+      eventTitle: "El gran día",
+      cuando: "Domingo 28 de junio, 2026 · de 5:00 p.m. a 2:00 a.m.",
+      plusOne:
+        "Esta invitación es solo para ti — la boda es un momento íntimo y no contamos " +
+        "con cupos para acompañantes. Pero tu +1 no se queda por fuera: puede unirse a " +
+        "la fiesta <strong>a partir de las 10:00 p.m.</strong>",
+      rsvpTexto:
+        "Para organizarlo todo con cariño, te pedimos confirmar antes del " +
+        "<strong>1 de junio</strong>. ¡Escríbenos!",
+      waMensaje: "¡Hola! Confirmo mi asistencia a la boda de Julián y Valentina. 💍",
+    },
+
+    // -------- Invitados a la FIESTA (desde las 10 p.m.) --------
+    fiesta: {
+      heroEyebrow: "Nos casamos y queremos celebrar contigo",
+      heroKicker: "La fiesta",
+      introScript: "¡Te esperamos en la pista!",
+      intro:
+        "Nos casamos y la noche apenas empieza. Llégate a brindar, a bailar y a " +
+        "celebrar con nosotros hasta tarde. Sin protocolos, puro buen rato.",
+      eventTag: "La fiesta",
+      eventTitle: "¡A celebrar!",
+      cuando: "Domingo 28 de junio, 2026 · desde las 10:00 p.m. hasta las 2:00 a.m.",
+      rsvpTexto:
+        "Para tenerlo todo listo, te pedimos confirmar antes del " +
+        "<strong>1 de junio</strong>. ¡Avísanos que vienes!",
+      waMensaje: "¡Hola! Confirmo mi asistencia a la fiesta de Julián y Valentina. 🥂",
+    },
+  },
 };
 
 /* ============================================================
    No necesitas tocar nada debajo de esta línea.
    ============================================================ */
 
-// --- 1. Rellenar textos desde CONFIG ---
-document.querySelectorAll("[data-config]").forEach((el) => {
-  const key = el.getAttribute("data-config");
-  if (CONFIG[key] != null) el.innerHTML = CONFIG[key];
-});
-document.querySelectorAll("[data-config-href]").forEach((el) => {
-  const key = el.getAttribute("data-config-href");
-  if (CONFIG[key] != null) el.setAttribute("href", CONFIG[key]);
-});
-
-// --- 2. Tipo de invitación según la URL (?invitacion=ceremonia | fiesta) ---
+// --- 1. Elegir la vista (?invitacion=ceremonia | fiesta) ---
 const params = new URLSearchParams(window.location.search);
 const tipo = (params.get("invitacion") || "ceremonia").toLowerCase();
 const esFiesta = tipo === "fiesta";
-
+const vista = esFiesta ? CONFIG.vistas.fiesta : CONFIG.vistas.ceremonia;
 document.body.dataset.invite = esFiesta ? "fiesta" : "ceremonia";
+document.title = `${CONFIG.nombre1} & ${CONFIG.nombre2} · ${esFiesta ? "La fiesta" : "Nuestra boda"}`;
 
-// Ocultar secciones exclusivas de ceremonia para los invitados de fiesta
+// Mezcla de valores: primero la vista, luego lo compartido
+const DATA = Object.assign({}, CONFIG, vista);
+
+// --- 2. Rellenar textos ---
+document.querySelectorAll("[data-config]").forEach((el) => {
+  const key = el.getAttribute("data-config");
+  if (DATA[key] != null) el.innerHTML = DATA[key];
+});
+document.querySelectorAll("[data-config-href]").forEach((el) => {
+  const key = el.getAttribute("data-config-href");
+  if (DATA[key] != null) el.setAttribute("href", DATA[key]);
+});
+
+// --- 3. Ocultar secciones exclusivas de la boda en la vista de fiesta ---
 if (esFiesta) {
   document.querySelectorAll(".only-ceremonia").forEach((el) => el.remove());
 }
 
-// Badge informativo
-const badge = document.querySelector("[data-invite-badge]");
-if (badge) badge.textContent = esFiesta ? CONFIG.badgeFiesta : CONFIG.badgeCeremonia;
+// --- 4. Enlace a la invitación de la FIESTA (para reenviar al +1) ---
+const fiestaUrl = `${window.location.origin}${window.location.pathname}?invitacion=fiesta`;
+document.querySelectorAll("[data-fiesta-link]").forEach((el) => el.setAttribute("href", fiestaUrl));
 
-// --- 3. Enlaces de RSVP por WhatsApp (mensaje prellenado) ---
-const nombres = `${CONFIG.nombre1} y ${CONFIG.nombre2}`;
-const mensaje = esFiesta
-  ? `¡Hola! Confirmo mi asistencia a la fiesta de ${nombres}. 🥂`
-  : `¡Hola! Confirmo mi asistencia a la boda de ${nombres}. 💍`;
-const waLink = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensaje)}`;
+document.querySelectorAll("[data-copy-fiesta]").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(fiestaUrl);
+    } catch (_) {
+      // Fallback simple si el navegador bloquea el portapapeles
+      const t = document.createElement("textarea");
+      t.value = fiestaUrl; document.body.appendChild(t); t.select();
+      document.execCommand("copy"); t.remove();
+    }
+    const original = btn.textContent;
+    btn.textContent = "¡Enlace copiado!";
+    btn.classList.add("btn--copied");
+    setTimeout(() => { btn.textContent = original; btn.classList.remove("btn--copied"); }, 2200);
+  });
+});
+
+// --- 5. RSVP por WhatsApp (mensaje prellenado según la vista) ---
+const waLink = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(vista.waMensaje)}`;
 document.querySelectorAll("[data-rsvp-link]").forEach((el) => el.setAttribute("href", waLink));
 
-// --- 4. Revelado suave al hacer scroll ---
+// --- 6. Revelado suave al hacer scroll ---
 const reveals = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-visible");
-          io.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
   reveals.forEach((el) => io.observe(el));
 } else {
   reveals.forEach((el) => el.classList.add("is-visible"));
