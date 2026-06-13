@@ -121,8 +121,8 @@ if (esFiesta) {
   document.querySelectorAll(".only-fiesta").forEach((el) => el.remove());
 }
 
-// --- 3a. Personalización del invitado (solo fiesta): ?para=Nombre ---
-if (esFiesta) {
+// --- 3a. Personalización del invitado (solo boda): ?para=Nombre ---
+if (!esFiesta) {
   const raw = (params.get("para") || params.get("nombre") || params.get("name") || "").trim();
   if (raw) {
     const name = raw.charAt(0).toUpperCase() + raw.slice(1);
@@ -130,7 +130,7 @@ if (esFiesta) {
       el.textContent = `${name},`;
       el.hidden = false;
     });
-    document.title = `${name} · La fiesta de ${CONFIG.nombre1} & ${CONFIG.nombre2}`;
+    document.title = `${name} · Boda de ${CONFIG.nombre1} & ${CONFIG.nombre2}`;
   }
 }
 
