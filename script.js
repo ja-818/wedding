@@ -53,10 +53,10 @@ const CONFIG = {
       eventTitle: "El gran día",
       cuando: "Domingo 28 de junio, 2026 · de 5:00 p.m. a 2:00 a.m.",
       barra:
-        "Hasta las 10:00 p.m. la casa somos nosotros: la comida y los tragos van por " +
-        "nuestra cuenta, así que come y brinda sin pena. 🥂 Cuando arranque la fiesta " +
-        "(de ahí en adelante), la barra pasa a ser por cuenta de cada quien — ¡pero la " +
-        "rumba la armamos entre todos!",
+        "De 5 a 10pm tenemos una experiencia etílica y gastronómica completamente " +
+        "pensada para ti.<br><br>" +
+        "Después de esto, la barra va por cuenta de cada quién.<br><br>" +
+        "Enfarrémonos y no te olvides de gastarle algo a los novios.",
       plusOne:
         "Esta invitación es solo para ti — la boda es un momento íntimo y no contamos " +
         "con cupos para acompañantes. Pero tu +1 no se queda por fuera: puede unirse a " +
@@ -81,7 +81,7 @@ const CONFIG = {
       flyerCuando: "Domingo 28 de junio",
       flyerHorario: "10:00 p.m. – 2:00 a.m.",
       flyerDonde: "Caña · Calle 54a #4-26, Bogotá",
-      flyerNote: "La barra va por cuenta de cada quien 🍸 ¡pero la fiesta la armamos todos!",
+      flyerNote: "La barra va por cuenta de cada quién. Enfarrémonos y no te olvides de gastarle algo a los novios.",
       waMensaje: "¡Hola! Confirmo mi asistencia a la fiesta de Valentina y Julián. 🥂",
     },
   },
