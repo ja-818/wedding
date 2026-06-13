@@ -127,7 +127,7 @@ if (!esFiesta) {
   if (raw) {
     const name = raw.charAt(0).toUpperCase() + raw.slice(1);
     document.querySelectorAll("[data-greet]").forEach((el) => {
-      el.textContent = `${name},`;
+      el.textContent = `${name}, te esperamos!`;
       el.hidden = false;
     });
     document.title = `${name} · Boda de ${CONFIG.nombre1} & ${CONFIG.nombre2}`;
