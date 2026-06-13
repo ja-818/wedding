@@ -65,9 +65,9 @@ html:not(.is-fiesta) .only-fiesta { display: none !important; }
   filter: grayscale(1) brightness(0.82) contrast(1.35);
 }
 
-/* En pantallas anchas (desktop) baja el encuadre para no cortar las caras */
+/* En pantallas anchas (desktop) muestra el clip completo, sin recortar/agrandar */
 @media (min-width: 768px) {
-  .page-bg, .flyer__bg { object-position: center 10%; }
+  .page-bg, .flyer__bg { object-fit: contain; object-position: center; }
 }
 .page-scrim {
   position: fixed; inset: 0; z-index: -1;
