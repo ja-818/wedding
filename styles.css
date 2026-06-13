@@ -65,10 +65,6 @@ html:not(.is-fiesta) .only-fiesta { display: none !important; }
   filter: grayscale(1) brightness(0.82) contrast(1.35);
 }
 
-/* En pantallas anchas (desktop) muestra el clip completo, sin recortar/agrandar */
-@media (min-width: 768px) {
-  .page-bg, .flyer__bg { object-fit: contain; object-position: center; }
-}
 .page-scrim {
   position: fixed; inset: 0; z-index: -1;
   background: linear-gradient(180deg, rgba(10,10,10,0.26) 0%, rgba(10,10,10,0.44) 55%, rgba(10,10,10,0.62) 100%);
@@ -469,4 +465,10 @@ main, .hero { position: relative; z-index: 1; }
   .event__row { grid-template-columns: 1fr; gap: 4px; }
   .event__label { padding-top: 0; }
   .card__actions .btn { width: 100%; }
+}
+
+/* En pantallas anchas (desktop): clip completo, sin recortar/agrandar.
+   Va al final para ganarle a la regla base de .flyer__bg (cover). */
+@media (min-width: 768px) {
+  .page-bg, .flyer__bg { object-fit: contain; object-position: center; }
 }
