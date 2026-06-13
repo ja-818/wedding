@@ -61,8 +61,13 @@ html:not(.is-fiesta) .only-fiesta { display: none !important; }
 /* ============ Video de fondo (vista boda) ============ */
 .page-bg {
   position: fixed; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; z-index: -2;
+  object-fit: cover; object-position: center; z-index: -2;
   filter: grayscale(1) brightness(0.82) contrast(1.35);
+}
+
+/* En pantallas anchas (desktop) baja el encuadre para no cortar las caras */
+@media (min-width: 768px) {
+  .page-bg, .flyer__bg { object-position: center 30%; }
 }
 .page-scrim {
   position: fixed; inset: 0; z-index: -1;
