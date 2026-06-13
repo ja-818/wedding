@@ -6,38 +6,29 @@
   <title>Julián & Valentina · Caña, Bogotá</title>
   <meta name="description" content="Nos casamos en Caña, Bogotá. Acompáñanos a celebrar." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital@0;1&family=Pinyon+Script&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="glow" aria-hidden="true"></div>
+  <div class="wash" aria-hidden="true"></div>
 
   <!-- ============ PORTADA ============ -->
   <header class="hero" id="inicio">
-    <div class="hero__frame">
-      <p class="hero__eyebrow" data-config="heroEyebrow">Con la bendición de quienes amamos</p>
-      <p class="hero__kicker" data-config="heroKicker">Nos casamos</p>
+    <p class="eyebrow" data-config="heroEyebrow"></p>
+    <p class="kicker" data-config="heroKicker">Nos casamos</p>
 
-      <h1 class="hero__names">
-        <span data-config="nombre1">Julián</span>
-        <span class="hero__amp">&amp;</span>
-        <span data-config="nombre2">Valentina</span>
-      </h1>
+    <h1 class="hero__names">
+      <span data-config="nombre1">Julián</span><span class="hero__amp">&amp;</span><span data-config="nombre2">Valentina</span>
+    </h1>
 
-      <div class="hero__meta">
-        <span data-config="fechaCorta">28 · Junio · 2026</span>
-        <span class="hero__dot" aria-hidden="true">✦</span>
-        <span data-config="lugarCorto">Caña · Bogotá</span>
-      </div>
-
-      <div class="ornament" aria-hidden="true">
-        <svg viewBox="0 0 120 50" width="120" height="50"><path d="M10 25 H45 M75 25 H110" stroke="currentColor" stroke-width="1"/><path d="M60 10 L66 25 L60 40 L54 25 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="60" cy="25" r="2" fill="currentColor"/></svg>
-      </div>
+    <div class="hero__meta">
+      <span data-config="fechaCorta">28 · Junio · 2026</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span data-config="lugarCorto">Caña · Bogotá</span>
     </div>
+
     <p class="hero__scroll" aria-hidden="true">Desliza</p>
   </header>
 
@@ -45,8 +36,7 @@
     <!-- ============ CLIP (modo gif B/N) ============ -->
     <section class="section section--reel reveal" aria-hidden="true">
       <figure class="reel">
-        <video class="reel__video" autoplay muted loop playsinline preload="auto"
-               poster="">
+        <video class="reel__video" autoplay muted loop playsinline preload="auto">
           <source src="assets/cana.mp4" type="video/mp4" />
         </video>
       </figure>
@@ -54,54 +44,45 @@
 
     <!-- ============ INTRO (solo boda) ============ -->
     <section class="section section--intro hide-fiesta reveal">
-      <p class="script-accent" data-config="introScript">Te esperamos</p>
+      <p class="label" data-config="introScript">Te esperamos</p>
       <p class="lede" data-config="intro">
         Después de mucho camino juntos, queremos celebrar nuestro amor rodeados de
         la gente que más queremos. Sin protocolos, con buena música y mejores tragos.
       </p>
     </section>
 
-    <div class="divider hide-fiesta reveal" aria-hidden="true">
-      <svg viewBox="0 0 300 24" width="300" height="24"><path d="M0 12 H120 M180 12 H300" stroke="currentColor" stroke-width="1"/><path d="M150 3 L156 12 L150 21 L144 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="128" cy="12" r="2" fill="currentColor"/><circle cx="172" cy="12" r="2" fill="currentColor"/></svg>
-    </div>
-
     <!-- ============ EL PLAN ============ -->
     <section class="section section--event reveal" id="plan">
-      <span class="event__tag" data-config="eventTag">La boda</span>
-      <h2 class="event__title" data-config="eventTitle">El gran día</h2>
+      <span class="label" data-config="eventTag">La boda</span>
+      <h2 class="title" data-config="eventTitle">El gran día</h2>
       <div class="event__grid">
         <div class="event__row"><span class="event__label">Cuándo</span><span class="event__value" data-config="cuando">Domingo 28 de junio, 2026 · de 5:00 p.m. a 2:00 a.m.</span></div>
         <div class="event__row"><span class="event__label">Dónde</span><span class="event__value" data-config="donde">Caña — La Casa Negra · Calle 54a #4-26, Bogotá</span></div>
       </div>
     </section>
 
-    <!-- ============ ACOMPAÑANTE / +1 (solo ceremonia) ============ -->
+    <!-- ============ ACOMPAÑANTE / +1 (solo boda) ============ -->
     <section class="section section--plusone only-ceremonia reveal">
-      <div class="plusone__card">
-        <span class="plusone__icon" aria-hidden="true">✦</span>
-        <h3 class="plusone__title">¿Vienes con alguien?</h3>
-        <p class="plusone__text" data-config="plusOne">
+      <div class="card">
+        <h3 class="card__title">¿Vienes con alguien?</h3>
+        <p class="card__text" data-config="plusOne">
           Esta invitación es solo para ti — la boda es un momento íntimo y no
           contamos con cupos para acompañantes. Pero tu +1 no se queda por fuera:
           puede unirse a la fiesta <strong>a partir de las 10:00 p.m.</strong>
         </p>
-        <p class="plusone__cta-label">¿Quieres invitarlo? Envíale la invitación a la fiesta:</p>
-        <div class="plusone__actions">
+        <p class="card__cta-label">¿Quieres invitarlo? Envíale la invitación a la fiesta:</p>
+        <div class="card__actions">
           <a class="btn btn--solid" data-fiesta-link href="#" target="_blank" rel="noopener">Abrir invitación a la fiesta</a>
           <button class="btn btn--ghost" type="button" data-copy-fiesta>Copiar enlace</button>
         </div>
       </div>
     </section>
 
-    <div class="divider reveal" aria-hidden="true">
-      <svg viewBox="0 0 300 24" width="300" height="24"><path d="M0 12 H120 M180 12 H300" stroke="currentColor" stroke-width="1"/><path d="M150 3 L156 12 L150 21 L144 12 Z" fill="none" stroke="currentColor" stroke-width="1"/><circle cx="128" cy="12" r="2" fill="currentColor"/><circle cx="172" cy="12" r="2" fill="currentColor"/></svg>
-    </div>
-
     <!-- ============ DRESS CODE ============ -->
     <section class="section section--dress reveal" id="dresscode">
-      <span class="event__tag">Código de vestimenta</span>
-      <h2 class="event__title">Cóctel</h2>
-      <p class="dress__text" data-config="dress">
+      <span class="label">Código de vestimenta</span>
+      <h2 class="title">Cóctel</h2>
+      <p class="lede" data-config="dress">
         Elegante pero relajado. Sácale brillo a tu mejor versión: vestidos de cóctel,
         trajes, looks con personalidad. Sin afanes y con mucho estilo.
       </p>
@@ -109,9 +90,9 @@
 
     <!-- ============ UBICACIÓN (solo boda) ============ -->
     <section class="section section--place hide-fiesta reveal" id="ubicacion">
-      <span class="event__tag">El lugar</span>
-      <h2 class="event__title">Caña</h2>
-      <p class="place__text" data-config="lugarTexto">
+      <span class="label">El lugar</span>
+      <h2 class="title">Caña</h2>
+      <p class="lede" data-config="lugarTexto">
         Un bar con alma en el corazón de Bogotá. Calle 54a #4-26.
       </p>
       <a class="btn btn--ghost" data-config-href="mapaUrl" href="#" target="_blank" rel="noopener">Ver en el mapa</a>
@@ -119,7 +100,7 @@
 
     <!-- ============ CIERRE ============ -->
     <footer class="closing reveal">
-      <p class="closing__script">Con amor,</p>
+      <p class="closing__label">Con amor,</p>
       <p class="closing__names">
         <span data-config="nombre1">Julián</span> &amp; <span data-config="nombre2">Valentina</span>
       </p>
