@@ -21,7 +21,7 @@ const CONFIG = {
     options: [
       {
         label: "Opción traje",
-        text: "Traje oscuro, camisa de vestir blanca, corbata opcional y zapatos formales.",
+        text: "Traje negro, camisa de vestir blanca, corbata opcional y zapatos formales.",
       },
       {
         label: "Opción vestido",
@@ -140,7 +140,6 @@ function dressCodeHTML(dc) {
     .join("");
   return (
     `<div class="dc">` +
-    `<p class="dc__eyebrow">${dc.eyebrow}</p>` +
     `<h3 class="dc__title">${dc.title}</h3>` +
     `<div class="dc__rule"></div>` +
     `<p class="dc__avoid">${dc.avoid}</p>` +
