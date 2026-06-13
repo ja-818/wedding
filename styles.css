@@ -446,43 +446,6 @@ main, .hero { position: relative; z-index: 1; }
   .flyer__meta { margin: 24px 0 22px; }
 }
 
-/* ============ MÚSICA (YouTube oculto) ============ */
-#yt-player {
-  position: fixed; left: -9999px; bottom: 0;
-  width: 320px; height: 180px;
-  pointer-events: none; border: 0; z-index: -1;
-}
-
-/* ============ BOTÓN DE MÚSICA ============ */
-.music-toggle {
-  position: fixed; bottom: 18px; right: 18px; z-index: 70;
-  width: 46px; height: 46px; border-radius: 50%;
-  background: rgba(22,22,22,0.55);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.28);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  transition: transform 0.18s ease, border-color 0.18s ease;
-}
-.music-toggle[hidden] { display: none; }
-.music-toggle:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.5); }
-.eq { display: flex; align-items: flex-end; gap: 3px; height: 17px; }
-.eq i {
-  display: block; width: 3px; border-radius: 2px; background: #fff;
-  height: 6px;
-}
-.eq i:nth-child(1) { height: 7px; }
-.eq i:nth-child(2) { height: 13px; }
-.eq i:nth-child(3) { height: 9px; }
-.music-toggle.is-playing .eq i { animation: eq 0.9s ease-in-out infinite; }
-.music-toggle.is-playing .eq i:nth-child(2) { animation-delay: 0.18s; }
-.music-toggle.is-playing .eq i:nth-child(3) { animation-delay: 0.34s; }
-@keyframes eq { 0%, 100% { height: 4px; } 50% { height: 17px; } }
-
-@media (prefers-reduced-motion: reduce) {
-  .music-toggle.is-playing .eq i { animation: none; }
-}
-
 /* ============ REVELADO AL SCROLL ============ */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }

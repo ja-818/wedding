@@ -185,69 +185,6 @@ document.querySelectorAll("[data-copy-fiesta]").forEach((btn) => {
 const waLink = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(vista.waMensaje)}`;
 document.querySelectorAll("[data-rsvp-link]").forEach((el) => el.setAttribute("href", waLink));
 
-// --- 5b. Música de fondo (YouTube oculto, tap para reproducir) ---
-const musicBtn = document.querySelector("[data-music]");
-const YT_VIDEO = "5NhDwwL93BM"; // ← Morocha · Bersuit Vergarabat
-let ytPlayer = null;
-if (musicBtn) {
-  const setPlaying = (p) => {
-    musicBtn.classList.toggle("is-playing", p);
-    musicBtn.setAttribute("aria-label", p ? "Pausar música" : "Reproducir música");
-  };
-
-  // Cargar la API de YouTube
-  const tag = document.createElement("script");
-  tag.src = "https://www.youtube.com/iframe_api";
-  document.head.appendChild(tag);
-
-  let started = false; // ¿ya activamos el sonido?
-  const startAudio = () => {
-    if (started || !ytPlayer) return;
-    started = true;
-    try { ytPlayer.unMute(); ytPlayer.setVolume(55); ytPlayer.playVideo(); } catch (_) {}
-  };
-
-  window.onYouTubeIframeAPIReady = function () {
-    ytPlayer = new YT.Player("yt-player", {
-      videoId: YT_VIDEO,
-      playerVars: {
-        autoplay: 1, mute: 1, controls: 0, disablekb: 1, loop: 1,
-        playlist: YT_VIDEO, playsinline: 1, rel: 0, modestbranding: 1,
-      },
-      events: {
-        onReady: () => {
-          musicBtn.hidden = false;
-          try { ytPlayer.mute(); ytPlayer.playVideo(); } catch (_) {} // autoplay en mudo
-        },
-        onStateChange: (e) => {
-          setPlaying(e.data === YT.PlayerState.PLAYING);
-          if (e.data === YT.PlayerState.ENDED && ytPlayer) ytPlayer.playVideo();
-        },
-      },
-    });
-  };
-
-  // Activa el sonido en el primer gesto en cualquier parte (no requiere el botón)
-  const onFirstGesture = (e) => {
-    if (e.target && e.target.closest && e.target.closest("[data-music]")) return;
-    startAudio();
-  };
-  ["pointerdown", "touchstart", "keydown"].forEach((ev) =>
-    window.addEventListener(ev, onFirstGesture, { passive: true })
-  );
-
-  // El botón: activa/pausa manualmente
-  musicBtn.addEventListener("click", () => {
-    if (!ytPlayer || !ytPlayer.getPlayerState) return;
-    if (!started) { startAudio(); return; }
-    if (ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
-      ytPlayer.pauseVideo();
-    } else {
-      ytPlayer.unMute(); ytPlayer.setVolume(55); ytPlayer.playVideo();
-    }
-  });
-}
-
 // --- 6. Revelado suave al hacer scroll ---
 const reveals = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
