@@ -185,6 +185,49 @@ document.querySelectorAll("[data-copy-fiesta]").forEach((btn) => {
 const waLink = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(vista.waMensaje)}`;
 document.querySelectorAll("[data-rsvp-link]").forEach((el) => el.setAttribute("href", waLink));
 
+// --- 5b. Música de fondo (YouTube oculto, tap para reproducir) ---
+const musicBtn = document.querySelector("[data-music]");
+const YT_VIDEO = "5NhDwwL93BM"; // ← Morocha · Bersuit Vergarabat
+let ytPlayer = null;
+if (musicBtn) {
+  const setPlaying = (p) => {
+    musicBtn.classList.toggle("is-playing", p);
+    musicBtn.setAttribute("aria-label", p ? "Pausar música" : "Reproducir música");
+  };
+
+  // Cargar la API de YouTube
+  const tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+
+  window.onYouTubeIframeAPIReady = function () {
+    ytPlayer = new YT.Player("yt-player", {
+      videoId: YT_VIDEO,
+      playerVars: {
+        autoplay: 0, controls: 0, disablekb: 1, loop: 1,
+        playlist: YT_VIDEO, playsinline: 1, rel: 0, modestbranding: 1,
+      },
+      events: {
+        onReady: () => { musicBtn.hidden = false; },
+        onStateChange: (e) => {
+          setPlaying(e.data === YT.PlayerState.PLAYING);
+          if (e.data === YT.PlayerState.ENDED && ytPlayer) ytPlayer.playVideo();
+        },
+      },
+    });
+  };
+
+  musicBtn.addEventListener("click", () => {
+    if (!ytPlayer || !ytPlayer.getPlayerState) return;
+    if (ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+      ytPlayer.pauseVideo();
+    } else {
+      ytPlayer.setVolume(55);
+      ytPlayer.playVideo();
+    }
+  });
+}
+
 // --- 6. Revelado suave al hacer scroll ---
 const reveals = document.querySelectorAll(".reveal");
 if ("IntersectionObserver" in window) {
