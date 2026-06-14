@@ -121,9 +121,14 @@ if (esFiesta) {
 
 // --- 3a. Personalización del invitado (solo boda): ?para=Nombre ---
 if (!esFiesta) {
-  const raw = (params.get("para") || params.get("nombre") || params.get("name") || "").trim();
+  // Acepta espacios reales, "+" o "_" como separador (WhatsApp rompe el link en los espacios)
+  const raw = (params.get("para") || params.get("nombre") || params.get("name") || "")
+    .replace(/_/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
   if (raw) {
-    const name = raw.charAt(0).toUpperCase() + raw.slice(1);
+    // Capitaliza la primera letra de cada palabra
+    const name = raw.split(" ").map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : w)).join(" ");
     document.querySelectorAll("[data-greet]").forEach((el) => {
       el.textContent = `${name}, te esperamos!`;
       el.hidden = false;

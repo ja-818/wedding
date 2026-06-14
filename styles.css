@@ -127,6 +127,12 @@ main, .hero { position: relative; z-index: 1; }
 .card--intro { text-align: left; max-width: 560px; }
 .card--intro .intro-copy { max-width: none; }
 
+/* Logo de Caña en la card "El lugar" */
+.place__crest {
+  display: block; height: 84px; width: auto; margin: 0 auto 14px;
+  opacity: 0.9;
+}
+
 /* Subtítulo del lugar */
 .place__sub {
   font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.22em;
@@ -376,6 +382,10 @@ main, .hero { position: relative; z-index: 1; }
 }
 
 .flyer__logo { margin-bottom: 6px; }
+.flyer__crest {
+  display: block; height: 92px; width: auto; margin: 0 auto 14px;
+  opacity: 0.9;
+}
 .flyer__brand {
   display: block; font-family: var(--serif);
   font-size: clamp(2.8rem, 13vw, 3.6rem); font-weight: 500;
