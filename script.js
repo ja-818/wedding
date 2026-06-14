@@ -129,8 +129,11 @@ if (!esFiesta) {
   if (raw) {
     // Capitaliza la primera letra de cada palabra
     const name = raw.split(" ").map((w) => (w ? w.charAt(0).toUpperCase() + w.slice(1) : w)).join(" ");
+    // Flag para plural: ?plural (o ?plural=1) → "los esperamos"
+    const plural = params.has("plural") && !/^(0|false|no)$/i.test(params.get("plural") || "");
+    const saludo = plural ? "los esperamos" : "te esperamos";
     document.querySelectorAll("[data-greet]").forEach((el) => {
-      el.textContent = `${name}, te esperamos!`;
+      el.textContent = `${name}, ${saludo}!`;
       el.hidden = false;
     });
     document.title = `${name} · Boda de ${CONFIG.nombre1} & ${CONFIG.nombre2}`;
